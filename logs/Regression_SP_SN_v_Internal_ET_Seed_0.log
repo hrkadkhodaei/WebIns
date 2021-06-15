@@ -1,0 +1,28 @@
+
+________________________________________________________________________________
+Random state: 0
+
+Target: linkInternalChangeRate
+Features reduced to (383203, 20)
+
+Final enumerated feature set (SP_SN_v):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'SVCluster0', 21: 'SVCluster1', 22: 'SVCluster2', 23: 'SVCluster3', 24: 'SVCluster4', 25: 'SVCluster5', 26: 'SVCluster6', 27: 'SVCluster7', 28: 'SVCluster8', 29: 'SVCluster9', 30: 'SVCluster10', 31: 'SVCluster11', 32: 'SVCluster12', 33: 'SVCluster13', 34: 'SVCluster14', 35: 'SVCluster15', 36: 'SVCluster16', 37: 'SVCluster17', 38: 'SVCluster18', 39: 'SVCluster19'} 
+
+Model: ET
+
+Retraining on 287402 samples
+	Testing on 95801 samples
+		Test R2 0.6416639818462944
+		Test MAE 0.1519118296914175
+		Test MedAE 0.09476851848858314
+
+Top features in ascending order of importance:
+	 ['numExternalInLinks', 'avg_numExternalInLinks', 'trustRank', 'domainDepth', 'SVCluster12', 'SVCluster5', 'SVCluster10', 'SVCluster11', 'SVCluster2', 'SVCluster7', 'SVCluster3', 'SVCluster13', 'avg_domainDepth', 'SVCluster19', 'avg_trustRank', 'numExternalOutLinks', 'SVCluster6', 'SVCluster15', 'SVCluster16', 'avg_numExternalOutLinks', 'SVCluster9', 'pathDepth', 'SVCluster8', 'SVCluster4', 'SVCluster17', 'avg_pathDepth', 'numInternalInLinks', 'textQuality', 'SVCluster18', 'SVCluster14', 'avg_numInternalOutLinks', 'avg_textSize', 'avg_numInternalInLinks', 'SVCluster1', 'SVCluster0', 'avg_textQuality', 'textSize', 'avg_contentLength', 'numInternalOutLinks', 'contentLength'] or [8, 18, 9, 4, 32, 25, 30, 31, 22, 27, 23, 33, 14, 39, 19, 6, 26, 35, 36, 16, 29, 3, 28, 24, 37, 13, 7, 2, 38, 34, 15, 11, 17, 21, 20, 12, 1, 10, 5, 0]
+
+Refitting on two features for decision boundaries
+	 [1, 10] MAE: 0.26273872018845756
+	 [1, 5] MAE: 0.2598557283361311
+	 [1, 0] MAE: 0.25135927979920564
+	 [10, 5] MAE: 0.24859846489055037
+	 [10, 0] MAE: 0.25981342508668304
+	 [5, 0] MAE: 0.25050648056459474
