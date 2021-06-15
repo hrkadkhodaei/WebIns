@@ -1,0 +1,27 @@
+
+________________________________________________________________________________
+Random state: 0
+
+Target: linkExternalChangeRate
+
+Final enumerated feature set (SP_SN):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank'} 
+
+Model: ET
+
+Retraining on 287402 samples
+	Testing on 95801 samples
+		Test R2 0.5818948454558602
+		Test MAE 0.06313729006497128
+		Test MedAE 0.02481481481283333
+
+Top features in ascending order of importance:
+	 ['numExternalInLinks', 'domainDepth', 'trustRank', 'avg_numExternalInLinks', 'avg_domainDepth', 'textQuality', 'numInternalInLinks', 'avg_trustRank', 'numInternalOutLinks', 'avg_numInternalOutLinks', 'avg_numInternalInLinks', 'pathDepth', 'avg_pathDepth', 'textSize', 'avg_contentLength', 'avg_textSize', 'avg_textQuality', 'contentLength', 'avg_numExternalOutLinks', 'numExternalOutLinks'] or [8, 4, 9, 18, 14, 2, 7, 19, 5, 15, 17, 3, 13, 1, 10, 11, 12, 0, 16, 6]
+
+Refitting on two features for decision boundaries
+	 [12, 0] MAE: 0.10570740373730021
+	 [12, 16] MAE: 0.09972804948016467
+	 [12, 6] MAE: 0.09945348497350141
+	 [0, 16] MAE: 0.09874919290748592
+	 [0, 6] MAE: 0.09922838899907907
+	 [16, 6] MAE: 0.10181936380070084
