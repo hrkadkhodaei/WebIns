@@ -341,7 +341,7 @@ if __name__ == '__main__':
     # dataset_filename = "datasets/changeRate_dataset-SVflat.pkl"
 
     # for _link change rate_
-    target, new_target = ['linkInternalChangeRate'], 'linkInternalChangeRate'
+    target, new_target = ['linkExternalChangeRate'], 'linkExternalChangeRate'
     # target, new_target = ['linkExternalChangeRate'], 'linkExternalChangeRate'
     dataset_filename = r"F:\Netherlands Project\WebInsight\Dataset\1M pickle dataset 384323 instances doina\1M_all_with_avg_atts.pkl"
     # dataset_filename = r"d:/WebInsight/datasets/1M_all_with_avg_atts.pkl"
@@ -367,7 +367,7 @@ if __name__ == '__main__':
                    {'n_estimators': [400], 'min_samples_leaf': [2]}],
     }
     pretuned_models = {
-        'ET': ExtraTreesRegressor(n_estimators=400, min_samples_leaf=2, n_jobs=n_jobs, random_state=random_state),
+        'ET': ExtraTreesRegressor(n_estimators=500, min_samples_leaf=2, n_jobs=n_jobs, random_state=random_state),
         'HGB': HistGradientBoostingRegressor(max_iter=400, min_samples_leaf=20, learning_rate=0.02, max_depth=None,
                                              max_leaf_nodes=None, random_state=random_state)
     }
@@ -457,7 +457,7 @@ if __name__ == '__main__':
     X_tune, _, y_tune, _ = train_test_split(X_dev, y_dev, train_size=tuning_fraction, shuffle=True,
                                             random_state=random_state)  # for lack of a simpler split function
     tuned_model = hyperparameter_tuning(model, params, X_tune, y_tune, cv=5, n_jobs=n_jobs)
-
+    #
     # (Alternative) preturned model, based on prior runs with tuning
     # tuned_model = pretuned_models[which_model]
 
@@ -468,10 +468,10 @@ if __name__ == '__main__':
 
     # _________________________________________________________________________________________________
     # (Step 3) Test it on the test data
-    if not 'v' in which_features:
-        scoring = test_and_score(tuned_model, X_test, y_test)
-        export_scores(list(scoring.values()), list(scoring.keys()), title)
+    scoring = test_and_score(tuned_model, X_test, y_test)
+    export_scores(list(scoring.values()), list(scoring.keys()), title)
 
+    # exit()
     # _________________________________________________________________________________________________
     # (Step 4, optional) Get permutation feature importance scores, or paste it from a previous run
     # top_feature_indices = [4, 3, 6, 2, 1, 5, 0] # manual

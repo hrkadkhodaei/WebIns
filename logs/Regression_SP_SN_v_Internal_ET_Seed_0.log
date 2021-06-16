@@ -42,6 +42,11 @@ Hyperparameter tuning on 95800 samples
 	Best parameters on the development set: {'min_samples_leaf': 2, 'n_estimators': 500}
 
 Retraining on 287402 samples
+	Testing on 95801 samples
+		Test R2 0.6417849614332949
+		Test MAE 0.1519087034309313
+		Test MedAE 0.0947777777746001
+
 
 Top features in ascending order of importance:
 	 ['numExternalInLinks', 'avg_numExternalInLinks', 'trustRank', 'domainDepth', 'SVCluster12', 'SVCluster5', 'SVCluster11', 'SVCluster2', 'SVCluster10', 'SVCluster7', 'SVCluster3', 'avg_domainDepth', 'SVCluster13', 'SVCluster19', 'avg_trustRank', 'numExternalOutLinks', 'SVCluster6', 'SVCluster15', 'SVCluster16', 'avg_numExternalOutLinks', 'SVCluster9', 'pathDepth', 'SVCluster8', 'SVCluster4', 'avg_pathDepth', 'SVCluster17', 'numInternalInLinks', 'textQuality', 'SVCluster18', 'SVCluster14', 'avg_numInternalOutLinks', 'avg_numInternalInLinks', 'avg_textSize', 'SVCluster1', 'SVCluster0', 'avg_textQuality', 'textSize', 'avg_contentLength', 'numInternalOutLinks', 'contentLength'] or [8, 18, 9, 4, 32, 25, 31, 22, 30, 27, 23, 14, 33, 39, 19, 6, 26, 35, 36, 16, 29, 3, 28, 24, 13, 37, 7, 2, 38, 34, 15, 17, 11, 21, 20, 12, 1, 10, 5, 0]
