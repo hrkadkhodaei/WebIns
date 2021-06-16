@@ -81,15 +81,15 @@ feature_sets = {
 }
 
 feature_sets.update(dict([
-    ('DP' + str(i + 1), [f + str(j + 1) for j in range(i + 1) for f in dynamic_page_features] + \
-     ['avg_linkExternalChangeRate', 'avg_linkInternalChangeRate']
-     )
+    ('DP' + str(i + 1), [f + str(j + 1) for j in range(i + 1) for f in dynamic_page_features])
     for i in range(8)
 ]))
+
+feature_sets['DPRate'] = ['avg_linkExternalChangeRate', 'avg_linkInternalChangeRate']
 
 feature_sets.update(dict([
     ('DN' + str(i + 1), [f + str(j + 1) for j in range(i + 1) for f in dynamic_network_features])
     for i in range(8)
 ]))  # 'DP/N8' will contain all -1, ... -8 dynamic page features
 
-# target, new_target = ['linkInternalChangeRate'], 'linkInternalChangeRate'
+

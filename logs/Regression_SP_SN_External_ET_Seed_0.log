@@ -9,19 +9,50 @@ Final enumerated feature set (SP_SN):
 
 Model: ET
 
+Hyperparameter tuning on 95800 samples
+
+	Scores on the development set:
+
+	mean 0.45514, stdev 0.00866 for parameters {'min_samples_leaf': 2, 'n_estimators': 200}
+	mean 0.45605, stdev 0.00874 for parameters {'min_samples_leaf': 2, 'n_estimators': 300}
+	mean 0.45678, stdev 0.00825 for parameters {'min_samples_leaf': 2, 'n_estimators': 400}
+	mean 0.45701, stdev 0.00839 for parameters {'min_samples_leaf': 2, 'n_estimators': 500}
+	mean 0.40064, stdev 0.00640 for parameters {'min_samples_leaf': 5, 'n_estimators': 200}
+	mean 0.40124, stdev 0.00641 for parameters {'min_samples_leaf': 5, 'n_estimators': 300}
+	mean 0.40146, stdev 0.00652 for parameters {'min_samples_leaf': 5, 'n_estimators': 400}
+	mean 0.40129, stdev 0.00659 for parameters {'min_samples_leaf': 5, 'n_estimators': 500}
+	mean 0.34067, stdev 0.00496 for parameters {'min_samples_leaf': 10, 'n_estimators': 200}
+	mean 0.34149, stdev 0.00511 for parameters {'min_samples_leaf': 10, 'n_estimators': 300}
+	mean 0.34145, stdev 0.00506 for parameters {'min_samples_leaf': 10, 'n_estimators': 400}
+	mean 0.34192, stdev 0.00516 for parameters {'min_samples_leaf': 10, 'n_estimators': 500}
+	mean 0.30619, stdev 0.00567 for parameters {'min_samples_leaf': 15, 'n_estimators': 200}
+	mean 0.30669, stdev 0.00577 for parameters {'min_samples_leaf': 15, 'n_estimators': 300}
+	mean 0.30695, stdev 0.00554 for parameters {'min_samples_leaf': 15, 'n_estimators': 400}
+	mean 0.30711, stdev 0.00548 for parameters {'min_samples_leaf': 15, 'n_estimators': 500}
+	mean 0.28158, stdev 0.00472 for parameters {'min_samples_leaf': 20, 'n_estimators': 200}
+	mean 0.28220, stdev 0.00478 for parameters {'min_samples_leaf': 20, 'n_estimators': 300}
+	mean 0.28249, stdev 0.00461 for parameters {'min_samples_leaf': 20, 'n_estimators': 400}
+	mean 0.28265, stdev 0.00458 for parameters {'min_samples_leaf': 20, 'n_estimators': 500}
+	mean 0.26434, stdev 0.00453 for parameters {'min_samples_leaf': 25, 'n_estimators': 200}
+	mean 0.26462, stdev 0.00438 for parameters {'min_samples_leaf': 25, 'n_estimators': 300}
+	mean 0.26482, stdev 0.00460 for parameters {'min_samples_leaf': 25, 'n_estimators': 400}
+	mean 0.26507, stdev 0.00458 for parameters {'min_samples_leaf': 25, 'n_estimators': 500}
+
+	Best parameters on the development set: {'min_samples_leaf': 2, 'n_estimators': 500}
+
 Retraining on 287402 samples
 	Testing on 95801 samples
-		Test R2 0.5818948454558602
-		Test MAE 0.06313729006497128
-		Test MedAE 0.02481481481283333
+		Test R2 0.5821993475453078
+		Test MAE 0.06309908140315613
+		Test MedAE 0.024722222221016665
 
 Top features in ascending order of importance:
-	 ['numExternalInLinks', 'domainDepth', 'trustRank', 'avg_numExternalInLinks', 'avg_domainDepth', 'textQuality', 'numInternalInLinks', 'avg_trustRank', 'numInternalOutLinks', 'avg_numInternalOutLinks', 'avg_numInternalInLinks', 'pathDepth', 'avg_pathDepth', 'textSize', 'avg_contentLength', 'avg_textSize', 'avg_textQuality', 'contentLength', 'avg_numExternalOutLinks', 'numExternalOutLinks'] or [8, 4, 9, 18, 14, 2, 7, 19, 5, 15, 17, 3, 13, 1, 10, 11, 12, 0, 16, 6]
+	 ['numExternalInLinks', 'domainDepth', 'trustRank', 'avg_numExternalInLinks', 'avg_domainDepth', 'textQuality', 'numInternalInLinks', 'avg_trustRank', 'numInternalOutLinks', 'avg_numInternalOutLinks', 'pathDepth', 'avg_numInternalInLinks', 'avg_pathDepth', 'textSize', 'avg_textSize', 'avg_contentLength', 'avg_textQuality', 'contentLength', 'avg_numExternalOutLinks', 'numExternalOutLinks'] or [8, 4, 9, 18, 14, 2, 7, 19, 5, 15, 3, 17, 13, 1, 11, 10, 12, 0, 16, 6]
 
 Refitting on two features for decision boundaries
-	 [12, 0] MAE: 0.10570740373730021
-	 [12, 16] MAE: 0.09972804948016467
-	 [12, 6] MAE: 0.09945348497350141
-	 [0, 16] MAE: 0.09874919290748592
-	 [0, 6] MAE: 0.09922838899907907
-	 [16, 6] MAE: 0.10181936380070084
+	 [12, 0] MAE: 0.10571361890756785
+	 [12, 16] MAE: 0.09971818340015809
+	 [12, 6] MAE: 0.09945037888502976
+	 [0, 16] MAE: 0.09873625062022426
+	 [0, 6] MAE: 0.09933346850844664
+	 [16, 6] MAE: 0.10189074330702594

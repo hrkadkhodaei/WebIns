@@ -324,13 +324,6 @@ def hyperparameter_tuning(model, params, X_tune, y_tune, cv=5, n_jobs=-1):
     return model
 
 
-target, new_target = ['linkInternalChangeRate'], 'linkInternalChangeRate'
-
-# import Definitions
-# from Evaluation import Evaluation
-# from MLTools import MLTools
-# from Plots import Plots
-
 if __name__ == '__main__':
     if not os.path.isdir(fig_path):
         os.mkdir(fig_path)
@@ -338,7 +331,7 @@ if __name__ == '__main__':
     n_jobs = -1
     which_model = 'ET'  # ET and HGB are most competitive, quick, and configurable; GB far too slow on large data
     # HGB ~ LGB (same alg.); HGB is experimental, so its configuration may need porting in the future
-    which_features = ['SP', 'SN']
+    which_features = ['SP', 'SN', 'DPRate']
     # which_features = ['SP']
     num_SV_clusters = 20
     tuning_fraction, test_fraction = 1. / 3, 1. / 4
@@ -348,7 +341,7 @@ if __name__ == '__main__':
     # dataset_filename = "datasets/changeRate_dataset-SVflat.pkl"
 
     # for _link change rate_
-    target, new_target = ['linkExternalChangeRate'], 'linkExternalChangeRate'
+    target, new_target = ['linkInternalChangeRate'], 'linkInternalChangeRate'
     # target, new_target = ['linkExternalChangeRate'], 'linkExternalChangeRate'
     dataset_filename = r"F:\Netherlands Project\WebInsight\Dataset\1M pickle dataset 384323 instances doina\1M_all_with_avg_atts.pkl"
     # dataset_filename = r"d:/WebInsight/datasets/1M_all_with_avg_atts.pkl"
@@ -462,10 +455,10 @@ if __name__ == '__main__':
     # (Step 1) Tune hyperparameters on a fraction of the development data
     X_tune, _, y_tune, _ = train_test_split(X_dev, y_dev, train_size=tuning_fraction, shuffle=True,
                                             random_state=random_state)  # for lack of a simpler split function
-    # tuned_model = hyperparameter_tuning(model, params, X_tune, y_tune, cv=5, n_jobs=n_jobs)
+    tuned_model = hyperparameter_tuning(model, params, X_tune, y_tune, cv=5, n_jobs=n_jobs)
 
     # (Alternative) preturned model, based on prior runs with tuning
-    tuned_model = pretuned_models[which_model]
+    # tuned_model = pretuned_models[which_model]
 
     # _________________________________________________________________________________________________
     # (Step 2) Refit a single model on all development data
@@ -474,8 +467,9 @@ if __name__ == '__main__':
 
     # _________________________________________________________________________________________________
     # (Step 3) Test it on the test data
-    scoring = test_and_score(tuned_model, X_test, y_test)
-    export_scores(list(scoring.values()), list(scoring.keys()), title)
+    if not 'v' in which_features:
+        scoring = test_and_score(tuned_model, X_test, y_test)
+        export_scores(list(scoring.values()), list(scoring.keys()), title)
 
     # _________________________________________________________________________________________________
     # (Step 4, optional) Get permutation feature importance scores, or paste it from a previous run
