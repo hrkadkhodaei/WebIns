@@ -1,0 +1,58 @@
+
+________________________________________________________________________________
+Random state: 0
+
+Target: linkExternalChangeRate
+
+Final enumerated feature set (SP_SN_DPRate):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate'} 
+
+Model: ET
+
+Hyperparameter tuning on 95800 samples
+
+	Scores on the development set:
+
+	mean 0.67450, stdev 0.00614 for parameters {'min_samples_leaf': 2, 'n_estimators': 200}
+	mean 0.67513, stdev 0.00625 for parameters {'min_samples_leaf': 2, 'n_estimators': 300}
+	mean 0.67545, stdev 0.00626 for parameters {'min_samples_leaf': 2, 'n_estimators': 400}
+	mean 0.67554, stdev 0.00633 for parameters {'min_samples_leaf': 2, 'n_estimators': 500}
+	mean 0.66786, stdev 0.00551 for parameters {'min_samples_leaf': 5, 'n_estimators': 200}
+	mean 0.66810, stdev 0.00565 for parameters {'min_samples_leaf': 5, 'n_estimators': 300}
+	mean 0.66802, stdev 0.00551 for parameters {'min_samples_leaf': 5, 'n_estimators': 400}
+	mean 0.66817, stdev 0.00563 for parameters {'min_samples_leaf': 5, 'n_estimators': 500}
+	mean 0.65819, stdev 0.00558 for parameters {'min_samples_leaf': 10, 'n_estimators': 200}
+	mean 0.65823, stdev 0.00553 for parameters {'min_samples_leaf': 10, 'n_estimators': 300}
+	mean 0.65825, stdev 0.00544 for parameters {'min_samples_leaf': 10, 'n_estimators': 400}
+	mean 0.65820, stdev 0.00540 for parameters {'min_samples_leaf': 10, 'n_estimators': 500}
+	mean 0.65220, stdev 0.00558 for parameters {'min_samples_leaf': 15, 'n_estimators': 200}
+	mean 0.65203, stdev 0.00551 for parameters {'min_samples_leaf': 15, 'n_estimators': 300}
+	mean 0.65203, stdev 0.00550 for parameters {'min_samples_leaf': 15, 'n_estimators': 400}
+	mean 0.65204, stdev 0.00549 for parameters {'min_samples_leaf': 15, 'n_estimators': 500}
+	mean 0.64748, stdev 0.00560 for parameters {'min_samples_leaf': 20, 'n_estimators': 200}
+	mean 0.64759, stdev 0.00561 for parameters {'min_samples_leaf': 20, 'n_estimators': 300}
+	mean 0.64765, stdev 0.00560 for parameters {'min_samples_leaf': 20, 'n_estimators': 400}
+	mean 0.64768, stdev 0.00563 for parameters {'min_samples_leaf': 20, 'n_estimators': 500}
+	mean 0.64424, stdev 0.00560 for parameters {'min_samples_leaf': 25, 'n_estimators': 200}
+	mean 0.64423, stdev 0.00565 for parameters {'min_samples_leaf': 25, 'n_estimators': 300}
+	mean 0.64427, stdev 0.00562 for parameters {'min_samples_leaf': 25, 'n_estimators': 400}
+	mean 0.64434, stdev 0.00555 for parameters {'min_samples_leaf': 25, 'n_estimators': 500}
+
+	Best parameters on the development set: {'min_samples_leaf': 2, 'n_estimators': 500}
+
+Retraining on 287402 samples
+	Testing on 95801 samples
+		Test R2 0.7076571302106267
+		Test MAE 0.0424939716832804
+		Test MedAE 0.006370370369733333
+
+Top features in ascending order of importance:
+	 ['avg_numExternalInLinks', 'numExternalInLinks', 'trustRank', 'avg_trustRank', 'textQuality', 'avg_numInternalOutLinks', 'avg_textQuality', 'domainDepth', 'avg_pathDepth', 'avg_domainDepth', 'avg_numInternalInLinks', 'numInternalInLinks', 'avg_contentLength', 'avg_textSize', 'textSize', 'avg_linkInternalChangeRate', 'numInternalOutLinks', 'contentLength', 'pathDepth', 'avg_numExternalOutLinks', 'numExternalOutLinks', 'avg_linkExternalChangeRate'] or [18, 8, 9, 19, 2, 15, 12, 4, 13, 14, 17, 7, 10, 11, 1, 21, 5, 0, 3, 16, 6, 20]
+
+Refitting on two features for decision boundaries
+	 [3, 16] MAE: 0.10819200252082517
+	 [3, 6] MAE: 0.10327154488344291
+	 [3, 20] MAE: 0.05380151168391143
+	 [16, 6] MAE: 0.10189074330702594
+	 [16, 20] MAE: 0.05409218796512661
+	 [6, 20] MAE: 0.052362375200672905

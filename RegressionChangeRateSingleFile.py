@@ -331,7 +331,7 @@ if __name__ == '__main__':
     n_jobs = -1
     which_model = 'ET'  # ET and HGB are most competitive, quick, and configurable; GB far too slow on large data
     # HGB ~ LGB (same alg.); HGB is experimental, so its configuration may need porting in the future
-    which_features = ['SP', 'SN', 'DPRate']
+    which_features = ['SP', 'SN', 'v']
     # which_features = ['SP']
     num_SV_clusters = 20
     tuning_fraction, test_fraction = 1. / 3, 1. / 4
@@ -341,7 +341,7 @@ if __name__ == '__main__':
     # dataset_filename = "datasets/changeRate_dataset-SVflat.pkl"
 
     # for _link change rate_
-    target, new_target = ['linkInternalChangeRate'], 'linkInternalChangeRate'
+    target, new_target = ['linkExternalChangeRate'], 'linkExternalChangeRate'
     # target, new_target = ['linkExternalChangeRate'], 'linkExternalChangeRate'
     dataset_filename = r"F:\Netherlands Project\WebInsight\Dataset\1M pickle dataset 384323 instances doina\1M_all_with_avg_atts.pkl"
     # dataset_filename = r"d:/WebInsight/datasets/1M_all_with_avg_atts.pkl"
@@ -422,7 +422,8 @@ if __name__ == '__main__':
     # plot_univariate_distribution(y, 9, (0, 1), pretty_label_dict.get(new_target, new_target), "figures-changeRate/distribution_"+new_target+".png")
     # scatterplot_2D(X, y, ['textSize', 'numInternalOutLinks'], pretty_label_dict.get(new_target, new_target))
 
-    corr_matrix(X, [Definitions.pretty_label_dict.get(f, f) for f in X.columns.values],
+    if not 'v' in which_features:
+        corr_matrix(X, [Definitions.pretty_label_dict.get(f, f) for f in X.columns.values],
                 'spearman', "corrmatrix-target_" + new_target + "-model " + which_model + "-features " + "_".join(
             which_features) + ".png")
     # exit()  # remove this when needed

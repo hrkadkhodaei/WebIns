@@ -1,0 +1,696 @@
+------------------------------------------------------------
+diffExternalOutLinks  -->  DP1
+
+________________________________________________________________________________
+Random state: 0
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP1):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1'} 
+
+Model: ET
+
+Hyperparameter tuning on 96080 samples
+
+	Scores on the development set:
+
+	mean 0.86484, stdev 0.00645 for parameters {'min_samples_leaf': 5, 'n_estimators': 200}
+	mean 0.86510, stdev 0.00714 for parameters {'min_samples_leaf': 5, 'n_estimators': 300}
+	mean 0.86528, stdev 0.00643 for parameters {'min_samples_leaf': 5, 'n_estimators': 400}
+	mean 0.86594, stdev 0.00637 for parameters {'min_samples_leaf': 5, 'n_estimators': 500}
+	mean 0.86762, stdev 0.00682 for parameters {'min_samples_leaf': 10, 'n_estimators': 200}
+	mean 0.86612, stdev 0.00715 for parameters {'min_samples_leaf': 10, 'n_estimators': 300}
+	mean 0.86613, stdev 0.00746 for parameters {'min_samples_leaf': 10, 'n_estimators': 400}
+	mean 0.86665, stdev 0.00725 for parameters {'min_samples_leaf': 10, 'n_estimators': 500}
+	mean 0.86297, stdev 0.00640 for parameters {'min_samples_leaf': 15, 'n_estimators': 200}
+	mean 0.86244, stdev 0.00619 for parameters {'min_samples_leaf': 15, 'n_estimators': 300}
+	mean 0.86257, stdev 0.00685 for parameters {'min_samples_leaf': 15, 'n_estimators': 400}
+	mean 0.86249, stdev 0.00679 for parameters {'min_samples_leaf': 15, 'n_estimators': 500}
+	mean 0.85846, stdev 0.00845 for parameters {'min_samples_leaf': 20, 'n_estimators': 200}
+	mean 0.85765, stdev 0.00766 for parameters {'min_samples_leaf': 20, 'n_estimators': 300}
+	mean 0.85836, stdev 0.00812 for parameters {'min_samples_leaf': 20, 'n_estimators': 400}
+	mean 0.85852, stdev 0.00819 for parameters {'min_samples_leaf': 20, 'n_estimators': 500}
+
+	Best parameters on the development set: {'min_samples_leaf': 10, 'n_estimators': 200}
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.834321975444889
+		Test Precision 0.5310853530031612
+		Test F1 score 0.6490314964854859
+		Test Accuracy (b) 0.8871042514112053
+
+Top features in ascending order of importance:
+	 ['numExternalOutLinks', 'contentLength', 'contentLength-1', 'textSize-1', 'textSize', 'numExternalInLinks', 'domainDepth', 'numInternalOutLinks', 'diffInternalOutLinks-1', 'trustRank', 'avg_numExternalInLinks', 'avg_contentLength', 'avg_numExternalOutLinks', 'avg_numInternalOutLinks', 'avg_domainDepth', 'avg_trustRank', 'textQuality', 'textQuality-1', 'avg_numInternalInLinks', 'pathDepth', 'numInternalInLinks', 'avg_textSize', 'avg_textQuality', 'avg_pathDepth', 'avg_linkInternalChangeRate', 'diffExternalOutLinks-1', 'avg_linkExternalChangeRate'] or [6, 0, 22, 23, 1, 8, 4, 5, 25, 9, 18, 10, 16, 15, 14, 19, 2, 24, 17, 3, 7, 11, 12, 13, 21, 26, 20]
+
+Refitting on two features for decision boundaries
+	 [13, 21] F1 score: 0.23763781523254343
+	 [13, 26] F1 score: 0.49890933497399187
+	 [13, 20] F1 score: 0.42908769083265735
+	 [21, 26] F1 score: 0.3357497863180221
+	 [21, 20] F1 score: 0.43798537284174016
+	 [26, 20] F1 score: 0.49315546255122505
+
+________________________________________________________________________________
+Random state: 1
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP1):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1'} 
+
+Model: ET
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.833127147766323
+		Test Precision 0.5333509327701513
+		Test F1 score 0.6503567787971458
+		Test Accuracy (b) 0.8867063570284445
+
+________________________________________________________________________________
+Random state: 2
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP1):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1'} 
+
+Model: ET
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8310071154898742
+		Test Precision 0.5224984943646219
+		Test F1 score 0.641593154085891
+		Test Accuracy (b) 0.8842440531658421
+------------------------------------------------------------
+diffExternalOutLinks  -->  DP2
+
+________________________________________________________________________________
+Random state: 0
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP2):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2'} 
+
+Model: ET
+
+Hyperparameter tuning on 96080 samples
+
+	Scores on the development set:
+
+	mean 0.87052, stdev 0.00628 for parameters {'min_samples_leaf': 5, 'n_estimators': 200}
+	mean 0.86929, stdev 0.00567 for parameters {'min_samples_leaf': 5, 'n_estimators': 300}
+	mean 0.86944, stdev 0.00581 for parameters {'min_samples_leaf': 5, 'n_estimators': 400}
+	mean 0.86988, stdev 0.00588 for parameters {'min_samples_leaf': 5, 'n_estimators': 500}
+	mean 0.87292, stdev 0.00440 for parameters {'min_samples_leaf': 10, 'n_estimators': 200}
+	mean 0.87253, stdev 0.00472 for parameters {'min_samples_leaf': 10, 'n_estimators': 300}
+	mean 0.87220, stdev 0.00466 for parameters {'min_samples_leaf': 10, 'n_estimators': 400}
+	mean 0.87264, stdev 0.00485 for parameters {'min_samples_leaf': 10, 'n_estimators': 500}
+	mean 0.86723, stdev 0.00466 for parameters {'min_samples_leaf': 15, 'n_estimators': 200}
+	mean 0.86729, stdev 0.00387 for parameters {'min_samples_leaf': 15, 'n_estimators': 300}
+	mean 0.86756, stdev 0.00450 for parameters {'min_samples_leaf': 15, 'n_estimators': 400}
+	mean 0.86745, stdev 0.00441 for parameters {'min_samples_leaf': 15, 'n_estimators': 500}
+	mean 0.86435, stdev 0.00405 for parameters {'min_samples_leaf': 20, 'n_estimators': 200}
+	mean 0.86396, stdev 0.00471 for parameters {'min_samples_leaf': 20, 'n_estimators': 300}
+	mean 0.86425, stdev 0.00460 for parameters {'min_samples_leaf': 20, 'n_estimators': 400}
+	mean 0.86419, stdev 0.00466 for parameters {'min_samples_leaf': 20, 'n_estimators': 500}
+
+	Best parameters on the development set: {'min_samples_leaf': 10, 'n_estimators': 200}
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.83983997792799
+		Test Precision 0.5461069250089702
+		Test F1 score 0.6618470402783062
+		Test Accuracy (b) 0.891439261298289
+
+Top features in ascending order of importance:
+	 ['numExternalOutLinks', 'contentLength-1', 'contentLength-2', 'contentLength', 'textSize-2', 'textSize-1', 'textSize', 'numExternalInLinks', 'avg_numExternalOutLinks', 'trustRank', 'domainDepth', 'avg_domainDepth', 'avg_contentLength', 'avg_numExternalInLinks', 'numInternalOutLinks', 'diffInternalOutLinks-2', 'diffInternalOutLinks-1', 'avg_numInternalOutLinks', 'avg_trustRank', 'avg_numInternalInLinks', 'pathDepth', 'numInternalInLinks', 'textQuality-1', 'textQuality-2', 'avg_textQuality', 'avg_pathDepth', 'avg_textSize', 'textQuality', 'diffExternalOutLinks-2', 'avg_linkInternalChangeRate', 'diffExternalOutLinks-1', 'avg_linkExternalChangeRate'] or [6, 22, 27, 0, 28, 23, 1, 8, 16, 9, 4, 14, 10, 18, 5, 30, 25, 15, 19, 17, 3, 7, 24, 29, 12, 13, 11, 2, 31, 21, 26, 20]
+
+Refitting on two features for decision boundaries
+	 [31, 21] F1 score: 0.3339718607569852
+	 [31, 26] F1 score: 0.5836410970515227
+	 [31, 20] F1 score: 0.4667740794592682
+	 [21, 26] F1 score: 0.3357497863180221
+	 [21, 20] F1 score: 0.43798537284174016
+	 [26, 20] F1 score: 0.49315546255122505
+
+________________________________________________________________________________
+Random state: 1
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP2):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2'} 
+
+Model: ET
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8405498281786942
+		Test Precision 0.5530933429811867
+		Test F1 score 0.6671758223773935
+		Test Accuracy (b) 0.8924558478100416
+
+________________________________________________________________________________
+Random state: 2
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP2):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2'} 
+
+Model: ET
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8371647509578544
+		Test Precision 0.5427608232789212
+		Test F1 score 0.6585575888051668
+		Test Accuracy (b) 0.8895532787941244
+------------------------------------------------------------
+diffExternalOutLinks  -->  DP3
+
+________________________________________________________________________________
+Random state: 0
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP3):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3'} 
+
+Model: ET
+
+Hyperparameter tuning on 96080 samples
+
+	Scores on the development set:
+
+	mean 0.87296, stdev 0.00456 for parameters {'min_samples_leaf': 5, 'n_estimators': 200}
+	mean 0.87321, stdev 0.00495 for parameters {'min_samples_leaf': 5, 'n_estimators': 300}
+	mean 0.87331, stdev 0.00462 for parameters {'min_samples_leaf': 5, 'n_estimators': 400}
+	mean 0.87385, stdev 0.00552 for parameters {'min_samples_leaf': 5, 'n_estimators': 500}
+	mean 0.87630, stdev 0.00487 for parameters {'min_samples_leaf': 10, 'n_estimators': 200}
+	mean 0.87636, stdev 0.00530 for parameters {'min_samples_leaf': 10, 'n_estimators': 300}
+	mean 0.87578, stdev 0.00437 for parameters {'min_samples_leaf': 10, 'n_estimators': 400}
+	mean 0.87573, stdev 0.00447 for parameters {'min_samples_leaf': 10, 'n_estimators': 500}
+	mean 0.87224, stdev 0.00431 for parameters {'min_samples_leaf': 15, 'n_estimators': 200}
+	mean 0.87235, stdev 0.00448 for parameters {'min_samples_leaf': 15, 'n_estimators': 300}
+	mean 0.87307, stdev 0.00511 for parameters {'min_samples_leaf': 15, 'n_estimators': 400}
+	mean 0.87327, stdev 0.00448 for parameters {'min_samples_leaf': 15, 'n_estimators': 500}
+	mean 0.86924, stdev 0.00611 for parameters {'min_samples_leaf': 20, 'n_estimators': 200}
+	mean 0.86880, stdev 0.00527 for parameters {'min_samples_leaf': 20, 'n_estimators': 300}
+	mean 0.86872, stdev 0.00548 for parameters {'min_samples_leaf': 20, 'n_estimators': 400}
+	mean 0.86895, stdev 0.00545 for parameters {'min_samples_leaf': 20, 'n_estimators': 500}
+
+	Best parameters on the development set: {'min_samples_leaf': 10, 'n_estimators': 300}
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8431507794178508
+		Test Precision 0.5851603638104356
+		Test F1 score 0.6908556572849552
+		Test Accuracy (b) 0.8971866559193
+
+Top features in ascending order of importance:
+	 ['numExternalOutLinks', 'contentLength-3', 'contentLength-2', 'contentLength', 'contentLength-1', 'textSize-2', 'textSize-1', 'textSize-3', 'textSize', 'numExternalInLinks', 'avg_numExternalOutLinks', 'trustRank', 'diffInternalOutLinks-3', 'avg_domainDepth', 'domainDepth', 'avg_numExternalInLinks', 'diffInternalOutLinks-1', 'avg_trustRank', 'diffInternalOutLinks-2', 'avg_contentLength', 'numInternalInLinks', 'avg_numInternalOutLinks', 'avg_numInternalInLinks', 'numInternalOutLinks', 'textQuality-3', 'textQuality-1', 'textQuality-2', 'pathDepth', 'textQuality', 'avg_textSize', 'avg_textQuality', 'avg_pathDepth', 'diffExternalOutLinks-3', 'diffExternalOutLinks-2', 'diffExternalOutLinks-1', 'avg_linkInternalChangeRate', 'avg_linkExternalChangeRate'] or [6, 32, 27, 0, 22, 28, 23, 33, 1, 8, 16, 9, 35, 14, 4, 18, 25, 19, 30, 10, 7, 15, 17, 5, 34, 24, 29, 3, 2, 11, 12, 13, 36, 31, 26, 21, 20]
+
+Refitting on two features for decision boundaries
+	 [31, 26] F1 score: 0.5836410970515227
+	 [31, 21] F1 score: 0.3357512953367876
+	 [31, 20] F1 score: 0.46181282468791185
+	 [26, 21] F1 score: 0.36426385825090724
+	 [26, 20] F1 score: 0.48083972009330217
+	 [21, 20] F1 score: 0.4377756833176249
+
+________________________________________________________________________________
+Random state: 1
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP3):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3'} 
+
+Model: ET
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8424742268041238
+		Test Precision 0.590633130962706
+		Test F1 score 0.694425560842964
+		Test Accuracy (b) 0.8973198105171216
+
+________________________________________________________________________________
+Random state: 2
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP3):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3'} 
+
+Model: ET
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8397646414887794
+		Test Precision 0.5854240198416484
+		Test F1 score 0.6898993873306729
+		Test Accuracy (b) 0.8954041573388497
+------------------------------------------------------------
+diffExternalOutLinks  -->  DP4
+
+________________________________________________________________________________
+Random state: 0
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP4):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3', 37: 'contentLength-4', 38: 'textSize-4', 39: 'textQuality-4', 40: 'diffInternalOutLinks-4', 41: 'diffExternalOutLinks-4'} 
+
+Model: ET
+
+Hyperparameter tuning on 96080 samples
+
+	Scores on the development set:
+
+	mean 0.87407, stdev 0.00556 for parameters {'min_samples_leaf': 5, 'n_estimators': 200}
+	mean 0.87420, stdev 0.00608 for parameters {'min_samples_leaf': 5, 'n_estimators': 300}
+	mean 0.87389, stdev 0.00627 for parameters {'min_samples_leaf': 5, 'n_estimators': 400}
+	mean 0.87442, stdev 0.00589 for parameters {'min_samples_leaf': 5, 'n_estimators': 500}
+	mean 0.87792, stdev 0.00667 for parameters {'min_samples_leaf': 10, 'n_estimators': 200}
+	mean 0.87835, stdev 0.00609 for parameters {'min_samples_leaf': 10, 'n_estimators': 300}
+	mean 0.87781, stdev 0.00610 for parameters {'min_samples_leaf': 10, 'n_estimators': 400}
+	mean 0.87743, stdev 0.00640 for parameters {'min_samples_leaf': 10, 'n_estimators': 500}
+	mean 0.87505, stdev 0.00666 for parameters {'min_samples_leaf': 15, 'n_estimators': 200}
+	mean 0.87469, stdev 0.00597 for parameters {'min_samples_leaf': 15, 'n_estimators': 300}
+	mean 0.87540, stdev 0.00651 for parameters {'min_samples_leaf': 15, 'n_estimators': 400}
+	mean 0.87491, stdev 0.00633 for parameters {'min_samples_leaf': 15, 'n_estimators': 500}
+	mean 0.87058, stdev 0.00597 for parameters {'min_samples_leaf': 20, 'n_estimators': 200}
+	mean 0.87076, stdev 0.00589 for parameters {'min_samples_leaf': 20, 'n_estimators': 300}
+	mean 0.87087, stdev 0.00587 for parameters {'min_samples_leaf': 20, 'n_estimators': 400}
+	mean 0.86982, stdev 0.00583 for parameters {'min_samples_leaf': 20, 'n_estimators': 500}
+
+	Best parameters on the development set: {'min_samples_leaf': 10, 'n_estimators': 300}
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8384604773072147
+		Test Precision 0.6004742145820984
+		Test F1 score 0.6997870013240458
+		Test Accuracy (b) 0.8964681709302644
+
+Top features in ascending order of importance:
+	 ['numExternalOutLinks', 'contentLength-3', 'contentLength', 'contentLength-1', 'contentLength-2', 'contentLength-4', 'textSize-1', 'avg_numExternalOutLinks', 'trustRank', 'textSize-3', 'avg_domainDepth', 'textSize-2', 'numExternalInLinks', 'textSize-4', 'diffInternalOutLinks-3', 'avg_contentLength', 'diffInternalOutLinks-4', 'domainDepth', 'avg_numExternalInLinks', 'textSize', 'avg_trustRank', 'diffInternalOutLinks-2', 'diffInternalOutLinks-1', 'avg_numInternalOutLinks', 'textQuality-2', 'numInternalOutLinks', 'avg_numInternalInLinks', 'textQuality-4', 'textQuality-3', 'avg_textQuality', 'numInternalInLinks', 'avg_pathDepth', 'pathDepth', 'textQuality-1', 'avg_textSize', 'textQuality', 'diffExternalOutLinks-3', 'diffExternalOutLinks-2', 'diffExternalOutLinks-4', 'diffExternalOutLinks-1', 'avg_linkInternalChangeRate', 'avg_linkExternalChangeRate'] or [6, 32, 0, 22, 27, 37, 23, 16, 9, 33, 14, 28, 8, 38, 35, 10, 40, 4, 18, 1, 19, 30, 25, 15, 29, 5, 17, 39, 34, 12, 7, 13, 3, 24, 11, 2, 36, 31, 41, 26, 21, 20]
+
+Refitting on two features for decision boundaries
+	 [41, 26] F1 score: 0.5629958002799814
+	 [41, 21] F1 score: 0.32738055125008425
+	 [41, 20] F1 score: 0.506172839506173
+	 [26, 21] F1 score: 0.36426385825090724
+	 [26, 20] F1 score: 0.48083972009330217
+	 [21, 20] F1 score: 0.4377756833176249
+
+________________________________________________________________________________
+Random state: 1
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP4):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3', 37: 'contentLength-4', 38: 'textSize-4', 39: 'textQuality-4', 40: 'diffInternalOutLinks-4', 41: 'diffExternalOutLinks-4'} 
+
+Model: ET
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8442611683848797
+		Test Precision 0.6029844885136462
+		Test F1 score 0.7035106809461085
+		Test Accuracy (b) 0.8993618523499968
+
+________________________________________________________________________________
+Random state: 2
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP4):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3', 37: 'contentLength-4', 38: 'textSize-4', 39: 'textQuality-4', 40: 'diffInternalOutLinks-4', 41: 'diffExternalOutLinks-4'} 
+
+Model: ET
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8353858784893268
+		Test Precision 0.5946814728229106
+		Test F1 score 0.6947763741891432
+		Test Accuracy (b) 0.8942567593250932
+------------------------------------------------------------
+diffExternalOutLinks  -->  DP5
+
+________________________________________________________________________________
+Random state: 0
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP5):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3', 37: 'contentLength-4', 38: 'textSize-4', 39: 'textQuality-4', 40: 'diffInternalOutLinks-4', 41: 'diffExternalOutLinks-4', 42: 'contentLength-5', 43: 'textSize-5', 44: 'textQuality-5', 45: 'diffInternalOutLinks-5', 46: 'diffExternalOutLinks-5'} 
+
+Model: ET
+
+Hyperparameter tuning on 96080 samples
+
+	Scores on the development set:
+
+	mean 0.87337, stdev 0.00533 for parameters {'min_samples_leaf': 5, 'n_estimators': 200}
+	mean 0.87301, stdev 0.00526 for parameters {'min_samples_leaf': 5, 'n_estimators': 300}
+	mean 0.87371, stdev 0.00459 for parameters {'min_samples_leaf': 5, 'n_estimators': 400}
+	mean 0.87299, stdev 0.00494 for parameters {'min_samples_leaf': 5, 'n_estimators': 500}
+	mean 0.87773, stdev 0.00552 for parameters {'min_samples_leaf': 10, 'n_estimators': 200}
+	mean 0.87748, stdev 0.00599 for parameters {'min_samples_leaf': 10, 'n_estimators': 300}
+	mean 0.87845, stdev 0.00511 for parameters {'min_samples_leaf': 10, 'n_estimators': 400}
+	mean 0.87796, stdev 0.00564 for parameters {'min_samples_leaf': 10, 'n_estimators': 500}
+	mean 0.87413, stdev 0.00575 for parameters {'min_samples_leaf': 15, 'n_estimators': 200}
+	mean 0.87426, stdev 0.00619 for parameters {'min_samples_leaf': 15, 'n_estimators': 300}
+	mean 0.87421, stdev 0.00597 for parameters {'min_samples_leaf': 15, 'n_estimators': 400}
+	mean 0.87395, stdev 0.00621 for parameters {'min_samples_leaf': 15, 'n_estimators': 500}
+	mean 0.87001, stdev 0.00744 for parameters {'min_samples_leaf': 20, 'n_estimators': 200}
+	mean 0.86967, stdev 0.00692 for parameters {'min_samples_leaf': 20, 'n_estimators': 300}
+	mean 0.87019, stdev 0.00742 for parameters {'min_samples_leaf': 20, 'n_estimators': 400}
+	mean 0.86934, stdev 0.00777 for parameters {'min_samples_leaf': 20, 'n_estimators': 500}
+
+	Best parameters on the development set: {'min_samples_leaf': 10, 'n_estimators': 400}
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8376327769347496
+		Test Precision 0.6112341453593718
+		Test F1 score 0.7067450387010417
+		Test Accuracy (b) 0.8970787263636284
+
+Top features in ascending order of importance:
+	 ['numExternalOutLinks', 'contentLength-3', 'contentLength-1', 'contentLength-2', 'contentLength-4', 'contentLength-5', 'contentLength', 'avg_numExternalOutLinks', 'numExternalInLinks', 'textSize-3', 'diffInternalOutLinks-5', 'trustRank', 'textSize-2', 'diffInternalOutLinks-1', 'diffInternalOutLinks-2', 'avg_numExternalInLinks', 'textSize-1', 'avg_numInternalOutLinks', 'diffInternalOutLinks-4', 'diffInternalOutLinks-3', 'numInternalOutLinks', 'textSize-4', 'avg_domainDepth', 'domainDepth', 'textSize-5', 'avg_trustRank', 'avg_contentLength', 'textQuality-2', 'textSize', 'diffExternalOutLinks-3', 'textQuality-3', 'textQuality-4', 'pathDepth', 'avg_textSize', 'textQuality', 'avg_textQuality', 'textQuality-1', 'avg_numInternalInLinks', 'numInternalInLinks', 'textQuality-5', 'diffExternalOutLinks-5', 'diffExternalOutLinks-2', 'avg_pathDepth', 'diffExternalOutLinks-4', 'diffExternalOutLinks-1', 'avg_linkInternalChangeRate', 'avg_linkExternalChangeRate'] or [6, 32, 22, 27, 37, 42, 0, 16, 8, 33, 45, 9, 28, 25, 30, 18, 23, 15, 40, 35, 5, 38, 14, 4, 43, 19, 10, 29, 1, 36, 34, 39, 3, 11, 2, 12, 24, 17, 7, 44, 46, 31, 13, 41, 26, 21, 20]
+
+Refitting on two features for decision boundaries
+	 [41, 26] F1 score: 0.5629958002799814
+	 [41, 21] F1 score: 0.32757822319243235
+	 [41, 20] F1 score: 0.5038579529608628
+	 [26, 21] F1 score: 0.3613759385367557
+	 [26, 20] F1 score: 0.4879377100795643
+	 [21, 20] F1 score: 0.4380636154397615
+
+________________________________________________________________________________
+Random state: 1
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP5):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3', 37: 'contentLength-4', 38: 'textSize-4', 39: 'textQuality-4', 40: 'diffInternalOutLinks-4', 41: 'diffExternalOutLinks-4', 42: 'contentLength-5', 43: 'textSize-5', 44: 'textQuality-5', 45: 'diffInternalOutLinks-5', 46: 'diffExternalOutLinks-5'} 
+
+Model: ET
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8405498281786942
+		Test Precision 0.6119895916733387
+		Test F1 score 0.7082874847975906
+		Test Accuracy (b) 0.8984464340316933
+
+________________________________________________________________________________
+Random state: 2
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP5):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3', 37: 'contentLength-4', 38: 'textSize-4', 39: 'textQuality-4', 40: 'diffInternalOutLinks-4', 41: 'diffExternalOutLinks-4', 42: 'contentLength-5', 43: 'textSize-5', 44: 'textQuality-5', 45: 'diffInternalOutLinks-5', 46: 'diffExternalOutLinks-5'} 
+
+Model: ET
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8338806787082649
+		Test Precision 0.6035456076062197
+		Test F1 score 0.7002585463947143
+		Test Accuracy (b) 0.8943940696550122
+------------------------------------------------------------
+diffExternalOutLinks  -->  DP6
+
+________________________________________________________________________________
+Random state: 0
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP6):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3', 37: 'contentLength-4', 38: 'textSize-4', 39: 'textQuality-4', 40: 'diffInternalOutLinks-4', 41: 'diffExternalOutLinks-4', 42: 'contentLength-5', 43: 'textSize-5', 44: 'textQuality-5', 45: 'diffInternalOutLinks-5', 46: 'diffExternalOutLinks-5', 47: 'contentLength-6', 48: 'textSize-6', 49: 'textQuality-6', 50: 'diffInternalOutLinks-6', 51: 'diffExternalOutLinks-6'} 
+
+Model: ET
+
+Hyperparameter tuning on 96080 samples
+
+	Scores on the development set:
+
+	mean 0.87279, stdev 0.00580 for parameters {'min_samples_leaf': 5, 'n_estimators': 200}
+	mean 0.87358, stdev 0.00609 for parameters {'min_samples_leaf': 5, 'n_estimators': 300}
+	mean 0.87296, stdev 0.00597 for parameters {'min_samples_leaf': 5, 'n_estimators': 400}
+	mean 0.87294, stdev 0.00611 for parameters {'min_samples_leaf': 5, 'n_estimators': 500}
+	mean 0.87996, stdev 0.00582 for parameters {'min_samples_leaf': 10, 'n_estimators': 200}
+	mean 0.88009, stdev 0.00582 for parameters {'min_samples_leaf': 10, 'n_estimators': 300}
+	mean 0.87930, stdev 0.00603 for parameters {'min_samples_leaf': 10, 'n_estimators': 400}
+	mean 0.87906, stdev 0.00587 for parameters {'min_samples_leaf': 10, 'n_estimators': 500}
+	mean 0.87688, stdev 0.00676 for parameters {'min_samples_leaf': 15, 'n_estimators': 200}
+	mean 0.87703, stdev 0.00667 for parameters {'min_samples_leaf': 15, 'n_estimators': 300}
+	mean 0.87737, stdev 0.00640 for parameters {'min_samples_leaf': 15, 'n_estimators': 400}
+	mean 0.87790, stdev 0.00639 for parameters {'min_samples_leaf': 15, 'n_estimators': 500}
+	mean 0.87432, stdev 0.00684 for parameters {'min_samples_leaf': 20, 'n_estimators': 200}
+	mean 0.87505, stdev 0.00652 for parameters {'min_samples_leaf': 20, 'n_estimators': 300}
+	mean 0.87458, stdev 0.00684 for parameters {'min_samples_leaf': 20, 'n_estimators': 400}
+	mean 0.87398, stdev 0.00768 for parameters {'min_samples_leaf': 20, 'n_estimators': 500}
+
+	Best parameters on the development set: {'min_samples_leaf': 10, 'n_estimators': 300}
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8383225272451372
+		Test Precision 0.6388100494060759
+		Test F1 score 0.7250924710655053
+		Test Accuracy (b) 0.8998213861009547
+
+Top features in ascending order of importance:
+	 ['numExternalOutLinks', 'contentLength-2', 'contentLength-1', 'contentLength', 'contentLength-3', 'contentLength-6', 'contentLength-5', 'contentLength-4', 'textSize-1', 'textSize-2', 'textSize-3', 'textSize-5', 'textSize-6', 'numExternalInLinks', 'diffInternalOutLinks-2', 'trustRank', 'diffInternalOutLinks-3', 'avg_numExternalOutLinks', 'textSize-4', 'diffInternalOutLinks-6', 'domainDepth', 'diffInternalOutLinks-5', 'textSize', 'avg_numExternalInLinks', 'avg_contentLength', 'avg_domainDepth', 'diffInternalOutLinks-1', 'numInternalOutLinks', 'avg_numInternalOutLinks', 'diffExternalOutLinks-3', 'textQuality-4', 'textQuality-2', 'textQuality-6', 'diffInternalOutLinks-4', 'numInternalInLinks', 'avg_textQuality', 'avg_trustRank', 'textQuality-1', 'textQuality-3', 'avg_textSize', 'diffExternalOutLinks-2', 'textQuality', 'avg_numInternalInLinks', 'textQuality-5', 'diffExternalOutLinks-6', 'pathDepth', 'avg_pathDepth', 'diffExternalOutLinks-4', 'diffExternalOutLinks-5', 'diffExternalOutLinks-1', 'avg_linkInternalChangeRate', 'avg_linkExternalChangeRate'] or [6, 27, 22, 0, 32, 47, 42, 37, 23, 28, 33, 43, 48, 8, 30, 9, 35, 16, 38, 50, 4, 45, 1, 18, 10, 14, 25, 5, 15, 36, 39, 29, 49, 40, 7, 12, 19, 24, 34, 11, 31, 2, 17, 44, 51, 3, 13, 41, 46, 26, 21, 20]
+
+Refitting on two features for decision boundaries
+	 [46, 26] F1 score: 0.5840555657999877
+	 [46, 21] F1 score: 0.3397637006875376
+	 [46, 20] F1 score: 0.45783224818077367
+	 [26, 21] F1 score: 0.36426385825090724
+	 [26, 20] F1 score: 0.48083972009330217
+	 [21, 20] F1 score: 0.4377756833176249
+
+________________________________________________________________________________
+Random state: 1
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP6):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3', 37: 'contentLength-4', 38: 'textSize-4', 39: 'textQuality-4', 40: 'diffInternalOutLinks-4', 41: 'diffExternalOutLinks-4', 42: 'contentLength-5', 43: 'textSize-5', 44: 'textQuality-5', 45: 'diffInternalOutLinks-5', 46: 'diffExternalOutLinks-5', 47: 'contentLength-6', 48: 'textSize-6', 49: 'textQuality-6', 50: 'diffInternalOutLinks-6', 51: 'diffExternalOutLinks-6'} 
+
+Model: ET
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8419243986254296
+		Test Precision 0.644262122646471
+		Test F1 score 0.7299487546180431
+		Test Accuracy (b) 0.9019206931081791
+
+________________________________________________________________________________
+Random state: 2
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP6):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3', 37: 'contentLength-4', 38: 'textSize-4', 39: 'textQuality-4', 40: 'diffInternalOutLinks-4', 41: 'diffExternalOutLinks-4', 42: 'contentLength-5', 43: 'textSize-5', 44: 'textQuality-5', 45: 'diffInternalOutLinks-5', 46: 'diffExternalOutLinks-5', 47: 'contentLength-6', 48: 'textSize-6', 49: 'textQuality-6', 50: 'diffInternalOutLinks-6', 51: 'diffExternalOutLinks-6'} 
+
+Model: ET
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.835112205801861
+		Test Precision 0.6344074844074844
+		Test F1 score 0.721053875236295
+		Test Accuracy (b) 0.8977471519811688
+------------------------------------------------------------
+diffExternalOutLinks  -->  DP7
+
+________________________________________________________________________________
+Random state: 0
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP7):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3', 37: 'contentLength-4', 38: 'textSize-4', 39: 'textQuality-4', 40: 'diffInternalOutLinks-4', 41: 'diffExternalOutLinks-4', 42: 'contentLength-5', 43: 'textSize-5', 44: 'textQuality-5', 45: 'diffInternalOutLinks-5', 46: 'diffExternalOutLinks-5', 47: 'contentLength-6', 48: 'textSize-6', 49: 'textQuality-6', 50: 'diffInternalOutLinks-6', 51: 'diffExternalOutLinks-6', 52: 'contentLength-7', 53: 'textSize-7', 54: 'textQuality-7', 55: 'diffInternalOutLinks-7', 56: 'diffExternalOutLinks-7'} 
+
+Model: ET
+
+Hyperparameter tuning on 96080 samples
+
+	Scores on the development set:
+
+	mean 0.87142, stdev 0.00561 for parameters {'min_samples_leaf': 5, 'n_estimators': 200}
+	mean 0.87142, stdev 0.00587 for parameters {'min_samples_leaf': 5, 'n_estimators': 300}
+	mean 0.87106, stdev 0.00627 for parameters {'min_samples_leaf': 5, 'n_estimators': 400}
+	mean 0.87083, stdev 0.00622 for parameters {'min_samples_leaf': 5, 'n_estimators': 500}
+	mean 0.87806, stdev 0.00570 for parameters {'min_samples_leaf': 10, 'n_estimators': 200}
+	mean 0.87787, stdev 0.00643 for parameters {'min_samples_leaf': 10, 'n_estimators': 300}
+	mean 0.87852, stdev 0.00583 for parameters {'min_samples_leaf': 10, 'n_estimators': 400}
+	mean 0.87865, stdev 0.00589 for parameters {'min_samples_leaf': 10, 'n_estimators': 500}
+	mean 0.87599, stdev 0.00848 for parameters {'min_samples_leaf': 15, 'n_estimators': 200}
+	mean 0.87576, stdev 0.00689 for parameters {'min_samples_leaf': 15, 'n_estimators': 300}
+	mean 0.87576, stdev 0.00662 for parameters {'min_samples_leaf': 15, 'n_estimators': 400}
+	mean 0.87547, stdev 0.00709 for parameters {'min_samples_leaf': 15, 'n_estimators': 500}
+	mean 0.87309, stdev 0.00759 for parameters {'min_samples_leaf': 20, 'n_estimators': 200}
+	mean 0.87282, stdev 0.00760 for parameters {'min_samples_leaf': 20, 'n_estimators': 300}
+	mean 0.87250, stdev 0.00742 for parameters {'min_samples_leaf': 20, 'n_estimators': 400}
+	mean 0.87311, stdev 0.00748 for parameters {'min_samples_leaf': 20, 'n_estimators': 500}
+
+	Best parameters on the development set: {'min_samples_leaf': 10, 'n_estimators': 500}
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8348737756931991
+		Test Precision 0.6476190476190476
+		Test F1 score 0.72942027238761
+		Test Accuracy (b) 0.8989019004546688
+
+Top features in ascending order of importance:
+	 ['numExternalOutLinks', 'contentLength-2', 'contentLength-1', 'contentLength-5', 'contentLength-3', 'contentLength-6', 'contentLength', 'contentLength-7', 'contentLength-4', 'textSize-2', 'numExternalInLinks', 'textSize-4', 'diffInternalOutLinks-1', 'textSize-3', 'textSize-7', 'diffExternalOutLinks-3', 'diffInternalOutLinks-3', 'avg_numExternalOutLinks', 'avg_numExternalInLinks', 'avg_domainDepth', 'diffExternalOutLinks-6', 'textSize-5', 'diffInternalOutLinks-5', 'domainDepth', 'trustRank', 'textSize-1', 'diffInternalOutLinks-7', 'diffInternalOutLinks-2', 'avg_contentLength', 'textSize', 'avg_trustRank', 'diffInternalOutLinks-6', 'diffInternalOutLinks-4', 'diffExternalOutLinks-7', 'textSize-6', 'avg_numInternalOutLinks', 'numInternalOutLinks', 'textQuality-5', 'textQuality-1', 'diffExternalOutLinks-2', 'avg_textQuality', 'textQuality-3', 'textQuality-7', 'pathDepth', 'textQuality-6', 'numInternalInLinks', 'textQuality', 'textQuality-2', 'textQuality-4', 'diffExternalOutLinks-5', 'avg_textSize', 'avg_pathDepth', 'diffExternalOutLinks-4', 'avg_numInternalInLinks', 'diffExternalOutLinks-1', 'avg_linkInternalChangeRate', 'avg_linkExternalChangeRate'] or [6, 27, 22, 42, 32, 47, 0, 52, 37, 28, 8, 38, 25, 33, 53, 36, 35, 16, 18, 14, 51, 43, 45, 4, 9, 23, 55, 30, 10, 1, 19, 50, 40, 56, 48, 15, 5, 44, 24, 31, 12, 34, 54, 3, 49, 7, 2, 29, 39, 46, 11, 13, 41, 17, 26, 21, 20]
+
+Refitting on two features for decision boundaries
+	 [17, 26] F1 score: 0.5051598148044849
+	 [17, 21] F1 score: 0.2413458766803805
+	 [17, 20] F1 score: 0.43286993667328666
+	 [26, 21] F1 score: 0.3598900142703004
+	 [26, 20] F1 score: 0.4833634036839676
+	 [21, 20] F1 score: 0.4382527277532374
+
+________________________________________________________________________________
+Random state: 1
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP7):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3', 37: 'contentLength-4', 38: 'textSize-4', 39: 'textQuality-4', 40: 'diffInternalOutLinks-4', 41: 'diffExternalOutLinks-4', 42: 'contentLength-5', 43: 'textSize-5', 44: 'textQuality-5', 45: 'diffInternalOutLinks-5', 46: 'diffExternalOutLinks-5', 47: 'contentLength-6', 48: 'textSize-6', 49: 'textQuality-6', 50: 'diffInternalOutLinks-6', 51: 'diffExternalOutLinks-6', 52: 'contentLength-7', 53: 'textSize-7', 54: 'textQuality-7', 55: 'diffInternalOutLinks-7', 56: 'diffExternalOutLinks-7'} 
+
+Model: ET
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8390378006872852
+		Test Precision 0.6540934419202743
+		Test F1 score 0.7351116998855903
+		Test Accuracy (b) 0.901344452671188
+
+________________________________________________________________________________
+Random state: 2
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP7):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3', 37: 'contentLength-4', 38: 'textSize-4', 39: 'textQuality-4', 40: 'diffInternalOutLinks-4', 41: 'diffExternalOutLinks-4', 42: 'contentLength-5', 43: 'textSize-5', 44: 'textQuality-5', 45: 'diffInternalOutLinks-5', 46: 'diffExternalOutLinks-5', 47: 'contentLength-6', 48: 'textSize-6', 49: 'textQuality-6', 50: 'diffInternalOutLinks-6', 51: 'diffExternalOutLinks-6', 52: 'contentLength-7', 53: 'textSize-7', 54: 'textQuality-7', 55: 'diffInternalOutLinks-7', 56: 'diffExternalOutLinks-7'} 
+
+Model: ET
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8315544608648057
+		Test Precision 0.6441594233623066
+		Test F1 score 0.7259586668259468
+		Test Accuracy (b) 0.8968694544194259
+------------------------------------------------------------
+diffExternalOutLinks  -->  DP8
+
+________________________________________________________________________________
+Random state: 0
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP8):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3', 37: 'contentLength-4', 38: 'textSize-4', 39: 'textQuality-4', 40: 'diffInternalOutLinks-4', 41: 'diffExternalOutLinks-4', 42: 'contentLength-5', 43: 'textSize-5', 44: 'textQuality-5', 45: 'diffInternalOutLinks-5', 46: 'diffExternalOutLinks-5', 47: 'contentLength-6', 48: 'textSize-6', 49: 'textQuality-6', 50: 'diffInternalOutLinks-6', 51: 'diffExternalOutLinks-6', 52: 'contentLength-7', 53: 'textSize-7', 54: 'textQuality-7', 55: 'diffInternalOutLinks-7', 56: 'diffExternalOutLinks-7', 57: 'contentLength-8', 58: 'textSize-8', 59: 'textQuality-8', 60: 'diffInternalOutLinks-8', 61: 'diffExternalOutLinks-8'} 
+
+Model: ET
+
+Hyperparameter tuning on 96080 samples
+
+	Scores on the development set:
+
+	mean 0.87124, stdev 0.00570 for parameters {'min_samples_leaf': 5, 'n_estimators': 200}
+	mean 0.87137, stdev 0.00591 for parameters {'min_samples_leaf': 5, 'n_estimators': 300}
+	mean 0.87126, stdev 0.00534 for parameters {'min_samples_leaf': 5, 'n_estimators': 400}
+	mean 0.87116, stdev 0.00554 for parameters {'min_samples_leaf': 5, 'n_estimators': 500}
+	mean 0.87658, stdev 0.00511 for parameters {'min_samples_leaf': 10, 'n_estimators': 200}
+	mean 0.87722, stdev 0.00582 for parameters {'min_samples_leaf': 10, 'n_estimators': 300}
+	mean 0.87726, stdev 0.00607 for parameters {'min_samples_leaf': 10, 'n_estimators': 400}
+	mean 0.87705, stdev 0.00578 for parameters {'min_samples_leaf': 10, 'n_estimators': 500}
+	mean 0.87408, stdev 0.00782 for parameters {'min_samples_leaf': 15, 'n_estimators': 200}
+	mean 0.87494, stdev 0.00740 for parameters {'min_samples_leaf': 15, 'n_estimators': 300}
+	mean 0.87477, stdev 0.00730 for parameters {'min_samples_leaf': 15, 'n_estimators': 400}
+	mean 0.87456, stdev 0.00755 for parameters {'min_samples_leaf': 15, 'n_estimators': 500}
+	mean 0.87220, stdev 0.00846 for parameters {'min_samples_leaf': 20, 'n_estimators': 200}
+	mean 0.87239, stdev 0.00808 for parameters {'min_samples_leaf': 20, 'n_estimators': 300}
+	mean 0.87243, stdev 0.00819 for parameters {'min_samples_leaf': 20, 'n_estimators': 400}
+	mean 0.87230, stdev 0.00791 for parameters {'min_samples_leaf': 20, 'n_estimators': 500}
+
+	Best parameters on the development set: {'min_samples_leaf': 10, 'n_estimators': 400}
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8312870740791833
+		Test Precision 0.6534374322272826
+		Test F1 score 0.7317102786716045
+		Test Accuracy (b) 0.897654524071292
+
+Top features in ascending order of importance:
+	 ['numExternalOutLinks', 'contentLength-2', 'contentLength-1', 'contentLength-4', 'contentLength', 'contentLength-8', 'contentLength-3', 'contentLength-7', 'avg_numExternalOutLinks', 'contentLength-5', 'textSize-2', 'contentLength-6', 'diffInternalOutLinks-6', 'diffExternalOutLinks-8', 'textSize-5', 'numExternalInLinks', 'diffInternalOutLinks-2', 'textSize-3', 'diffInternalOutLinks-3', 'diffInternalOutLinks-1', 'textSize-7', 'trustRank', 'domainDepth', 'diffExternalOutLinks-6', 'diffInternalOutLinks-7', 'diffExternalOutLinks-7', 'avg_domainDepth', 'diffExternalOutLinks-3', 'textSize-6', 'textSize-1', 'textSize-8', 'diffInternalOutLinks-5', 'avg_numExternalInLinks', 'diffInternalOutLinks-8', 'diffInternalOutLinks-4', 'textSize-4', 'avg_trustRank', 'textSize', 'avg_numInternalOutLinks', 'textQuality-7', 'diffExternalOutLinks-2', 'textQuality-8', 'avg_contentLength', 'pathDepth', 'textQuality-1', 'textQuality-4', 'textQuality-2', 'textQuality-6', 'numInternalOutLinks', 'textQuality-3', 'avg_pathDepth', 'avg_textSize', 'avg_textQuality', 'numInternalInLinks', 'avg_numInternalInLinks', 'textQuality-5', 'textQuality', 'diffExternalOutLinks-4', 'diffExternalOutLinks-5', 'diffExternalOutLinks-1', 'avg_linkInternalChangeRate', 'avg_linkExternalChangeRate'] or [6, 27, 22, 37, 0, 57, 32, 52, 16, 42, 28, 47, 50, 61, 43, 8, 30, 33, 35, 25, 53, 9, 4, 51, 55, 56, 14, 36, 48, 23, 58, 45, 18, 60, 40, 38, 19, 1, 15, 54, 31, 59, 10, 3, 24, 39, 29, 49, 5, 34, 13, 11, 12, 7, 17, 44, 2, 41, 46, 26, 21, 20]
+
+Refitting on two features for decision boundaries
+	 [46, 26] F1 score: 0.5840555657999877
+	 [46, 21] F1 score: 0.33972821742605913
+	 [46, 20] F1 score: 0.46364061040174404
+	 [26, 21] F1 score: 0.3613759385367557
+	 [26, 20] F1 score: 0.4879377100795643
+	 [21, 20] F1 score: 0.4380636154397615
+
+________________________________________________________________________________
+Random state: 1
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP8):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3', 37: 'contentLength-4', 38: 'textSize-4', 39: 'textQuality-4', 40: 'diffInternalOutLinks-4', 41: 'diffExternalOutLinks-4', 42: 'contentLength-5', 43: 'textSize-5', 44: 'textQuality-5', 45: 'diffInternalOutLinks-5', 46: 'diffExternalOutLinks-5', 47: 'contentLength-6', 48: 'textSize-6', 49: 'textQuality-6', 50: 'diffInternalOutLinks-6', 51: 'diffExternalOutLinks-6', 52: 'contentLength-7', 53: 'textSize-7', 54: 'textQuality-7', 55: 'diffInternalOutLinks-7', 56: 'diffExternalOutLinks-7', 57: 'contentLength-8', 58: 'textSize-8', 59: 'textQuality-8', 60: 'diffInternalOutLinks-8', 61: 'diffExternalOutLinks-8'} 
+
+Model: ET
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8379381443298969
+		Test Precision 0.662608695652174
+		Test F1 score 0.7400303490136569
+		Test Accuracy (b) 0.9014927755183255
+
+________________________________________________________________________________
+Random state: 2
+
+Target: diffExternalOutLinks
+
+Final enumerated feature set (SP_SN_DP8):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate', 22: 'contentLength-1', 23: 'textSize-1', 24: 'textQuality-1', 25: 'diffInternalOutLinks-1', 26: 'diffExternalOutLinks-1', 27: 'contentLength-2', 28: 'textSize-2', 29: 'textQuality-2', 30: 'diffInternalOutLinks-2', 31: 'diffExternalOutLinks-2', 32: 'contentLength-3', 33: 'textSize-3', 34: 'textQuality-3', 35: 'diffInternalOutLinks-3', 36: 'diffExternalOutLinks-3', 37: 'contentLength-4', 38: 'textSize-4', 39: 'textQuality-4', 40: 'diffInternalOutLinks-4', 41: 'diffExternalOutLinks-4', 42: 'contentLength-5', 43: 'textSize-5', 44: 'textQuality-5', 45: 'diffInternalOutLinks-5', 46: 'diffExternalOutLinks-5', 47: 'contentLength-6', 48: 'textSize-6', 49: 'textQuality-6', 50: 'diffInternalOutLinks-6', 51: 'diffExternalOutLinks-6', 52: 'contentLength-7', 53: 'textSize-7', 54: 'textQuality-7', 55: 'diffInternalOutLinks-7', 56: 'diffExternalOutLinks-7', 57: 'contentLength-8', 58: 'textSize-8', 59: 'textQuality-8', 60: 'diffInternalOutLinks-8', 61: 'diffExternalOutLinks-8'} 
+
+Model: ET
+
+Retraining on 288242 samples
+	Testing on 96081 samples
+		Test Recall 0.8249863163656267
+		Test Precision 0.6530545927209706
+		Test F1 score 0.7290205562273276
+		Test Accuracy (b) 0.8944527630176167
