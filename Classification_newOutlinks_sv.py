@@ -20,9 +20,13 @@ from sklearn.experimental import enable_hist_gradient_boosting
 from sklearn.ensemble import HistGradientBoostingClassifier, ExtraTreesClassifier
 from lightgbm import LGBMClassifier
 
-from data_exploration import read_dataset, plot_categorical_distribution, corr_matrix
-from feature_selection import filter_RFECV
+# from data_exploration import read_dataset, plot_categorical_distribution, corr_matrix
+# from feature_selection import filter_RFECV
 import Definitions
+import os
+
+fig_path = 'figures-newOutlinks/'
+
 
 def int_to_categorical(x):
     if x == 0:
@@ -94,7 +98,7 @@ def test_and_score(model, X_test, y_test, title, y_pred=None):
     if not y_pred and model:
         y_pred = model.predict(X_test)
 
-    export_confusion_matrix(y_test, y_pred, "figures-newOutlinks/confusion_matrix-" + title + ".png")
+    export_confusion_matrix(y_test, y_pred, fig_path + "confusion_matrix-" + title + ".png")
 
     scoring = {
         'Recall': recall_score(y_test, y_pred, pos_label=1, zero_division=0),
@@ -131,7 +135,7 @@ def export_scores(score_values, score_names, title):
     plt.xlim((0, 1))
     plt.tight_layout()
 
-    plt.savefig("figures-newOutlinks/scores-" + title + ".png", dpi=500, bbox_inches='tight')
+    plt.savefig(fig_path + "scores-" + title + ".png", dpi=500, bbox_inches='tight')
     plt.close()
 
 
@@ -168,7 +172,7 @@ def plot_permutation_feature_importance(model, title, features, target, X_test, 
     print("\nTop features in ascending order of importance:\n\t", list(np.array(features)[sorted_idx]), "or",
           list(sorted_idx))
 
-    pretty_features = [pretty_label_dict.get(f, f) for f in features]
+    pretty_features = [Definitions.pretty_label_dict.get(f, f) for f in features]
     title_suffix = ""
     num_features = len(features)
     if max_to_plot:
@@ -179,10 +183,11 @@ def plot_permutation_feature_importance(model, title, features, target, X_test, 
 
     fig = plt.figure(figsize=(4.1, 0.75 + num_features / 6))
     plt.boxplot(result.importances[sorted_idx].T, vert=False, labels=np.array(pretty_features)[sorted_idx])
-    plt.title("Feature permutation importance" + title_suffix + "\ntarget: " + pretty_label_dict.get(target, target),
+    plt.title("Feature permutation importance" + title_suffix + "\ntarget: " + Definitions.pretty_label_dict.get(target,
+                                                                                                                 target),
               fontsize=10)
     fig.tight_layout()
-    plt.savefig("figures-newOutlinks/permutation_importance-" + title + ".png", dpi=500, bbox_inches='tight')
+    plt.savefig(fig_path + "permutation_importance-" + title + ".png", dpi=500, bbox_inches='tight')
 
     return list(sorted_idx)  # top feature indices in ascending order
 
@@ -253,37 +258,37 @@ def plot_two_top_features(model, score, score_name, title, X, y, X_names, y_name
     # ____________________________________________________________
     # Save the composite figure
     fig.tight_layout(pad=0)
-    plt.savefig("figures-newOutlinks/two_features-" + title + '-' + ' '.join(X_names) + ".png", dpi=500,
+    plt.savefig(fig_path + "two_features-" + title + '-' + ' '.join(X_names) + ".png", dpi=500,
                 bbox_inches='tight')
 
 
 # _____________________________________________________________________________
-
 if __name__ == '__main__':
-
+    if not os.path.isdir(fig_path):
+        os.mkdir(fig_path)
     n_jobs = -1
     which_model = 'ET'  # HGB cannot be configured with balanced class weights (doesn't have the option);
     # HGB thus replaced by LGB, a more complete implementation of the same alg.
     num_SV_clusters = 20
     tuning_fraction, test_fraction = 1. / 3, 1. / 4
 
+    # target, new_target = ['diffInternalOutLinks'], 'diffInternalOutLinks'
     target, new_target = ['diffExternalOutLinks'], 'diffExternalOutLinks'
-    # target, new_target = ['diffExternalOutLinks'], 'diffExternalOutLinks'
-    path = r"F:\Netherlands Project\WebInsight\Dataset\1M pickle dataset 384323 instances doina\\"
-    path = r"dataset/1M/Pickle/"
-    path = r"D:\WebInsight\datasets\Pickle\\"
+    path = r"~/dataset/1M/Pickle/"
     file_name = 'All_data_avg_and_DP_atts.pkl'
     mainXy = pd.read_pickle(path + file_name)
     # Xy = read_dataset(path + file_name, ['url'] + features + target)  # Xy = pd.DataFrame with url as index
 
-    for dp in range(8):
-        which_features = ['SP', 'SN', 'DN'] + ['DP' + str(dp + 1)]
-        features = [f for fs in which_features for f in feature_sets[fs]]
+    for dur in range(8):
+    # for dp in [-1]:
+        # which_features = ['SP', 'SN'] + ['DP' + str(dp + 1)] + ['DN' + str(dp + 1)] + ['DPRate']
+        which_features = ['SP', 'SN']
+        features = [f for fs in which_features for f in Definitions.feature_sets[fs]]
 
         Xy = mainXy.filter(items=['url'] + features + target)
         Xy = Xy.set_index('url')
         print("------------------------------------------------------------")
-        print(new_target + "  -->  " + 'DP' + str(dp + 1))
+        print(new_target + "  -->  " + 'DP' + str(dur + 1))
         model_is_tuned = False
         first_run = True
         tuned_model = None
@@ -314,9 +319,9 @@ if __name__ == '__main__':
             if 'v' in which_features:
                 agglo = FeatureAgglomeration(affinity='cosine', linkage='complete',
                                              n_clusters=num_SV_clusters)  # n_clusters should be hypertuned
-                X_SV = agglo.fit_transform(X[feature_sets['v']])  # X_SV = np.array
+                X_SV = agglo.fit_transform(X[Definitions.feature_sets['v']])  # X_SV = np.array
                 print("Features reduced to", X_SV.shape)
-                X = X.drop(feature_sets['v'], axis='columns')  # X = pd.DataFrame
+                X = X.drop(Definitions.feature_sets['v'], axis='columns')  # X = pd.DataFrame
                 new_columns = ["SVCluster" + str(i) for i in range(num_SV_clusters)]
                 X_SV = pd.DataFrame(X_SV, index=X.index.values, columns=new_columns)
                 X[new_columns] = X_SV[new_columns]

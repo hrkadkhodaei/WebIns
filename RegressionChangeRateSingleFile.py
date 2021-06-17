@@ -331,7 +331,7 @@ if __name__ == '__main__':
     n_jobs = -1
     which_model = 'HGB'  # ET and HGB are most competitive, quick, and configurable; GB far too slow on large data
     # HGB ~ LGB (same alg.); HGB is experimental, so its configuration may need porting in the future
-    which_features = ['SP', 'SN', 'DPRate']
+    which_features = ['SP', 'SN']
     # which_features = ['SP']
     num_SV_clusters = 20
     tuning_fraction, test_fraction = 1. / 3, 1. / 4
