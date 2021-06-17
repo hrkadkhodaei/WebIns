@@ -341,7 +341,7 @@ if __name__ == '__main__':
     # dataset_filename = "datasets/changeRate_dataset-SVflat.pkl"
 
     # for _link change rate_
-    target, new_target = ['linkExternalChangeRate'], 'linkExternalChangeRate'
+    target, new_target = ['linkInternalChangeRate'], 'linkInternalChangeRate'
     # target, new_target = ['linkExternalChangeRate'], 'linkExternalChangeRate'
     dataset_filename = r"F:\Netherlands Project\WebInsight\Dataset\1M pickle dataset 384323 instances doina\1M_all_with_avg_atts.pkl"
     # dataset_filename = r"d:/WebInsight/datasets/1M_all_with_avg_atts.pkl"
