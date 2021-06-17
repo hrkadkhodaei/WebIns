@@ -1,0 +1,114 @@
+
+________________________________________________________________________________
+Random state: 0
+
+Target: linkExternalChangeRate
+
+Final enumerated feature set (SP_SN_DPRate):
+	 {0: 'contentLength', 1: 'textSize', 2: 'textQuality', 3: 'pathDepth', 4: 'domainDepth', 5: 'numInternalOutLinks', 6: 'numExternalOutLinks', 7: 'numInternalInLinks', 8: 'numExternalInLinks', 9: 'trustRank', 10: 'avg_contentLength', 11: 'avg_textSize', 12: 'avg_textQuality', 13: 'avg_pathDepth', 14: 'avg_domainDepth', 15: 'avg_numInternalOutLinks', 16: 'avg_numExternalOutLinks', 17: 'avg_numInternalInLinks', 18: 'avg_numExternalInLinks', 19: 'avg_trustRank', 20: 'avg_linkExternalChangeRate', 21: 'avg_linkInternalChangeRate'} 
+
+Model: HGB
+
+Hyperparameter tuning on 95800 samples
+
+	Scores on the development set:
+
+	mean 0.66535, stdev 0.00992 for parameters {'learning_rate': 0.1, 'max_iter': 200, 'min_samples_leaf': 10}
+	mean 0.67231, stdev 0.00858 for parameters {'learning_rate': 0.1, 'max_iter': 200, 'min_samples_leaf': 15}
+	mean 0.67491, stdev 0.00934 for parameters {'learning_rate': 0.1, 'max_iter': 200, 'min_samples_leaf': 20}
+	mean 0.67797, stdev 0.00884 for parameters {'learning_rate': 0.1, 'max_iter': 200, 'min_samples_leaf': 25}
+	mean 0.66535, stdev 0.00992 for parameters {'learning_rate': 0.1, 'max_iter': 300, 'min_samples_leaf': 10}
+	mean 0.67231, stdev 0.00858 for parameters {'learning_rate': 0.1, 'max_iter': 300, 'min_samples_leaf': 15}
+	mean 0.67491, stdev 0.00934 for parameters {'learning_rate': 0.1, 'max_iter': 300, 'min_samples_leaf': 20}
+	mean 0.67797, stdev 0.00884 for parameters {'learning_rate': 0.1, 'max_iter': 300, 'min_samples_leaf': 25}
+	mean 0.66535, stdev 0.00992 for parameters {'learning_rate': 0.1, 'max_iter': 400, 'min_samples_leaf': 10}
+	mean 0.67231, stdev 0.00858 for parameters {'learning_rate': 0.1, 'max_iter': 400, 'min_samples_leaf': 15}
+	mean 0.67491, stdev 0.00934 for parameters {'learning_rate': 0.1, 'max_iter': 400, 'min_samples_leaf': 20}
+	mean 0.67797, stdev 0.00884 for parameters {'learning_rate': 0.1, 'max_iter': 400, 'min_samples_leaf': 25}
+	mean 0.66535, stdev 0.00992 for parameters {'learning_rate': 0.1, 'max_iter': 500, 'min_samples_leaf': 10}
+	mean 0.67231, stdev 0.00858 for parameters {'learning_rate': 0.1, 'max_iter': 500, 'min_samples_leaf': 15}
+	mean 0.67491, stdev 0.00934 for parameters {'learning_rate': 0.1, 'max_iter': 500, 'min_samples_leaf': 20}
+	mean 0.67797, stdev 0.00884 for parameters {'learning_rate': 0.1, 'max_iter': 500, 'min_samples_leaf': 25}
+	mean 0.66871, stdev 0.00818 for parameters {'learning_rate': 0.08, 'max_iter': 200, 'min_samples_leaf': 10}
+	mean 0.67362, stdev 0.00925 for parameters {'learning_rate': 0.08, 'max_iter': 200, 'min_samples_leaf': 15}
+	mean 0.67695, stdev 0.00917 for parameters {'learning_rate': 0.08, 'max_iter': 200, 'min_samples_leaf': 20}
+	mean 0.67656, stdev 0.00857 for parameters {'learning_rate': 0.08, 'max_iter': 200, 'min_samples_leaf': 25}
+	mean 0.66871, stdev 0.00818 for parameters {'learning_rate': 0.08, 'max_iter': 300, 'min_samples_leaf': 10}
+	mean 0.67362, stdev 0.00925 for parameters {'learning_rate': 0.08, 'max_iter': 300, 'min_samples_leaf': 15}
+	mean 0.67695, stdev 0.00917 for parameters {'learning_rate': 0.08, 'max_iter': 300, 'min_samples_leaf': 20}
+	mean 0.67656, stdev 0.00857 for parameters {'learning_rate': 0.08, 'max_iter': 300, 'min_samples_leaf': 25}
+	mean 0.66871, stdev 0.00818 for parameters {'learning_rate': 0.08, 'max_iter': 400, 'min_samples_leaf': 10}
+	mean 0.67362, stdev 0.00925 for parameters {'learning_rate': 0.08, 'max_iter': 400, 'min_samples_leaf': 15}
+	mean 0.67695, stdev 0.00917 for parameters {'learning_rate': 0.08, 'max_iter': 400, 'min_samples_leaf': 20}
+	mean 0.67656, stdev 0.00857 for parameters {'learning_rate': 0.08, 'max_iter': 400, 'min_samples_leaf': 25}
+	mean 0.66871, stdev 0.00818 for parameters {'learning_rate': 0.08, 'max_iter': 500, 'min_samples_leaf': 10}
+	mean 0.67362, stdev 0.00925 for parameters {'learning_rate': 0.08, 'max_iter': 500, 'min_samples_leaf': 15}
+	mean 0.67695, stdev 0.00917 for parameters {'learning_rate': 0.08, 'max_iter': 500, 'min_samples_leaf': 20}
+	mean 0.67656, stdev 0.00857 for parameters {'learning_rate': 0.08, 'max_iter': 500, 'min_samples_leaf': 25}
+	mean 0.67042, stdev 0.00907 for parameters {'learning_rate': 0.06, 'max_iter': 200, 'min_samples_leaf': 10}
+	mean 0.67638, stdev 0.00923 for parameters {'learning_rate': 0.06, 'max_iter': 200, 'min_samples_leaf': 15}
+	mean 0.67925, stdev 0.01070 for parameters {'learning_rate': 0.06, 'max_iter': 200, 'min_samples_leaf': 20}
+	mean 0.68011, stdev 0.00945 for parameters {'learning_rate': 0.06, 'max_iter': 200, 'min_samples_leaf': 25}
+	mean 0.67042, stdev 0.00907 for parameters {'learning_rate': 0.06, 'max_iter': 300, 'min_samples_leaf': 10}
+	mean 0.67638, stdev 0.00923 for parameters {'learning_rate': 0.06, 'max_iter': 300, 'min_samples_leaf': 15}
+	mean 0.67925, stdev 0.01070 for parameters {'learning_rate': 0.06, 'max_iter': 300, 'min_samples_leaf': 20}
+	mean 0.68011, stdev 0.00945 for parameters {'learning_rate': 0.06, 'max_iter': 300, 'min_samples_leaf': 25}
+	mean 0.67042, stdev 0.00907 for parameters {'learning_rate': 0.06, 'max_iter': 400, 'min_samples_leaf': 10}
+	mean 0.67638, stdev 0.00923 for parameters {'learning_rate': 0.06, 'max_iter': 400, 'min_samples_leaf': 15}
+	mean 0.67925, stdev 0.01070 for parameters {'learning_rate': 0.06, 'max_iter': 400, 'min_samples_leaf': 20}
+	mean 0.68011, stdev 0.00945 for parameters {'learning_rate': 0.06, 'max_iter': 400, 'min_samples_leaf': 25}
+	mean 0.67042, stdev 0.00907 for parameters {'learning_rate': 0.06, 'max_iter': 500, 'min_samples_leaf': 10}
+	mean 0.67638, stdev 0.00923 for parameters {'learning_rate': 0.06, 'max_iter': 500, 'min_samples_leaf': 15}
+	mean 0.67925, stdev 0.01070 for parameters {'learning_rate': 0.06, 'max_iter': 500, 'min_samples_leaf': 20}
+	mean 0.68011, stdev 0.00945 for parameters {'learning_rate': 0.06, 'max_iter': 500, 'min_samples_leaf': 25}
+	mean 0.67160, stdev 0.00968 for parameters {'learning_rate': 0.04, 'max_iter': 200, 'min_samples_leaf': 10}
+	mean 0.67764, stdev 0.01030 for parameters {'learning_rate': 0.04, 'max_iter': 200, 'min_samples_leaf': 15}
+	mean 0.67971, stdev 0.00978 for parameters {'learning_rate': 0.04, 'max_iter': 200, 'min_samples_leaf': 20}
+	mean 0.68125, stdev 0.00755 for parameters {'learning_rate': 0.04, 'max_iter': 200, 'min_samples_leaf': 25}
+	mean 0.67160, stdev 0.00968 for parameters {'learning_rate': 0.04, 'max_iter': 300, 'min_samples_leaf': 10}
+	mean 0.67764, stdev 0.01030 for parameters {'learning_rate': 0.04, 'max_iter': 300, 'min_samples_leaf': 15}
+	mean 0.67971, stdev 0.00978 for parameters {'learning_rate': 0.04, 'max_iter': 300, 'min_samples_leaf': 20}
+	mean 0.68125, stdev 0.00755 for parameters {'learning_rate': 0.04, 'max_iter': 300, 'min_samples_leaf': 25}
+	mean 0.67160, stdev 0.00968 for parameters {'learning_rate': 0.04, 'max_iter': 400, 'min_samples_leaf': 10}
+	mean 0.67764, stdev 0.01030 for parameters {'learning_rate': 0.04, 'max_iter': 400, 'min_samples_leaf': 15}
+	mean 0.67971, stdev 0.00978 for parameters {'learning_rate': 0.04, 'max_iter': 400, 'min_samples_leaf': 20}
+	mean 0.68125, stdev 0.00755 for parameters {'learning_rate': 0.04, 'max_iter': 400, 'min_samples_leaf': 25}
+	mean 0.67160, stdev 0.00968 for parameters {'learning_rate': 0.04, 'max_iter': 500, 'min_samples_leaf': 10}
+	mean 0.67764, stdev 0.01030 for parameters {'learning_rate': 0.04, 'max_iter': 500, 'min_samples_leaf': 15}
+	mean 0.67971, stdev 0.00978 for parameters {'learning_rate': 0.04, 'max_iter': 500, 'min_samples_leaf': 20}
+	mean 0.68125, stdev 0.00755 for parameters {'learning_rate': 0.04, 'max_iter': 500, 'min_samples_leaf': 25}
+	mean 0.67072, stdev 0.00852 for parameters {'learning_rate': 0.02, 'max_iter': 200, 'min_samples_leaf': 10}
+	mean 0.67749, stdev 0.00902 for parameters {'learning_rate': 0.02, 'max_iter': 200, 'min_samples_leaf': 15}
+	mean 0.67968, stdev 0.00950 for parameters {'learning_rate': 0.02, 'max_iter': 200, 'min_samples_leaf': 20}
+	mean 0.68030, stdev 0.00921 for parameters {'learning_rate': 0.02, 'max_iter': 200, 'min_samples_leaf': 25}
+	mean 0.67073, stdev 0.00852 for parameters {'learning_rate': 0.02, 'max_iter': 300, 'min_samples_leaf': 10}
+	mean 0.67806, stdev 0.00910 for parameters {'learning_rate': 0.02, 'max_iter': 300, 'min_samples_leaf': 15}
+	mean 0.68054, stdev 0.00932 for parameters {'learning_rate': 0.02, 'max_iter': 300, 'min_samples_leaf': 20}
+	mean 0.68167, stdev 0.00973 for parameters {'learning_rate': 0.02, 'max_iter': 300, 'min_samples_leaf': 25}
+	mean 0.67073, stdev 0.00852 for parameters {'learning_rate': 0.02, 'max_iter': 400, 'min_samples_leaf': 10}
+	mean 0.67806, stdev 0.00910 for parameters {'learning_rate': 0.02, 'max_iter': 400, 'min_samples_leaf': 15}
+	mean 0.68068, stdev 0.00928 for parameters {'learning_rate': 0.02, 'max_iter': 400, 'min_samples_leaf': 20}
+	mean 0.68180, stdev 0.00969 for parameters {'learning_rate': 0.02, 'max_iter': 400, 'min_samples_leaf': 25}
+	mean 0.67073, stdev 0.00852 for parameters {'learning_rate': 0.02, 'max_iter': 500, 'min_samples_leaf': 10}
+	mean 0.67806, stdev 0.00910 for parameters {'learning_rate': 0.02, 'max_iter': 500, 'min_samples_leaf': 15}
+	mean 0.68067, stdev 0.00928 for parameters {'learning_rate': 0.02, 'max_iter': 500, 'min_samples_leaf': 20}
+	mean 0.68180, stdev 0.00969 for parameters {'learning_rate': 0.02, 'max_iter': 500, 'min_samples_leaf': 25}
+
+	Best parameters on the development set: {'learning_rate': 0.02, 'max_iter': 400, 'min_samples_leaf': 25}
+
+Retraining on 287402 samples
+	Testing on 95801 samples
+		Test R2 0.7185281529190504
+		Test MAE 0.04164449928013434
+		Test MedAE 0.006395971181962403
+
+Top features in ascending order of importance:
+	 ['numExternalInLinks', 'domainDepth', 'avg_trustRank', 'avg_textQuality', 'trustRank', 'avg_numExternalInLinks', 'avg_domainDepth', 'avg_pathDepth', 'avg_textSize', 'avg_numInternalInLinks', 'numInternalInLinks', 'textQuality', 'textSize', 'avg_numInternalOutLinks', 'avg_linkInternalChangeRate', 'avg_contentLength', 'pathDepth', 'contentLength', 'numInternalOutLinks', 'avg_numExternalOutLinks', 'numExternalOutLinks', 'avg_linkExternalChangeRate'] or [8, 4, 19, 12, 9, 18, 14, 13, 11, 17, 7, 2, 1, 15, 21, 10, 3, 0, 5, 16, 6, 20]
+
+Refitting on two features for decision boundaries
+	 [5, 16] MAE: 0.1018840635347245
+	 [5, 6] MAE: 0.09943629845997275
+	 [5, 20] MAE: 0.054571296788788574
+	 [16, 6] MAE: 0.10311532022149301
+	 [16, 20] MAE: 0.05602827023877884
+	 [6, 20] MAE: 0.05286209903374063
