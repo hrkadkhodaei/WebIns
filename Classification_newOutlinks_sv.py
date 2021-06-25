@@ -1,3 +1,4 @@
+from datetime import datetime
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -40,7 +41,8 @@ def int_to_categorical(x):
 def hyperparameter_tuning(model, params, X_tune, y_tune, cv=5, n_jobs=-1):
     print("\nHyperparameter tuning on", len(y_tune), "samples")
 
-    my_scorer = make_scorer(balanced_accuracy_score)
+    # my_scorer = make_scorer(balanced_accuracy_score)
+    my_scorer = make_scorer(f1_score)
     tuned_model = GridSearchCV(model, params, cv=cv, scoring=my_scorer, n_jobs=n_jobs)
     tuned_model.fit(X_tune, y_tune)
 
@@ -273,16 +275,16 @@ if __name__ == '__main__':
     tuning_fraction, test_fraction = 1. / 3, 1. / 4
 
     # target, new_target = ['diffInternalOutLinks'], 'diffInternalOutLinks'
-    target, new_target = ['diffExternalOutLinks'], 'diffExternalOutLinks'
+    target, new_target = ['diffInternalOutLinks'], 'diffInternalOutLinks'
     path = r"~/dataset/1M/Pickle/"
     file_name = 'All_data_avg_and_DP_atts.pkl'
     mainXy = pd.read_pickle(path + file_name)
     # Xy = read_dataset(path + file_name, ['url'] + features + target)  # Xy = pd.DataFrame with url as index
 
     for dur in range(8):
-    # for dp in [-1]:
-        # which_features = ['SP', 'SN'] + ['DP' + str(dp + 1)] + ['DN' + str(dp + 1)] + ['DPRate']
-        which_features = ['SP', 'SN']
+    # for dur in [7]:
+        which_features = ['SP', 'SN'] + ['DP' + str(dur + 1)] + ['DN' + str(dur + 1)] + ['DPRate']
+        # which_features = ['SP', 'SN']
         features = [f for fs in which_features for f in Definitions.feature_sets[fs]]
 
         Xy = mainXy.filter(items=['url'] + features + target)
@@ -328,7 +330,8 @@ if __name__ == '__main__':
 
             y = Xy[new_target]  # pd.Series
             y = np.array([int_to_categorical(yi) for yi in y])  # np.array
-
+            now = datetime.now()	    
+            print(now.strftime("%Y/%m/%d %H:%M:%S"))
             print("\nTarget:", new_target)
             X = Xy.drop(target,
                         axis='columns')  # X = pd.DataFrame with url as index; still needed to separate SV features
