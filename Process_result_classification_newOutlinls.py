@@ -104,7 +104,7 @@ ax.legend(loc='lower right', frameon=False, fontsize=9, labelspacing=0.2)
 plt.tight_layout()
 # plt.show()
 
-plt.savefig(path + fig_path + "168-all_scores-" + title + ".png", dpi=500, bbox_inches='tight')
+plt.savefig(path + fig_path + "all_scores-" + title + ".png", dpi=500, bbox_inches='tight')
 plt.close()
 
 print(dic1)
