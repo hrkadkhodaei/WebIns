@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 from sklearn.inspection import permutation_importance
 from matplotlib.patches import Rectangle
 import seaborn as sns
-import Definitions
+import definitions
 import os
 
 fig_path = 'figures_regression/'
@@ -29,7 +29,7 @@ def plot_permutation_feature_importance(model, title, features, target, X_test, 
     print("\nTop features in ascending order of importance:\n\t", list(np.array(features)[sorted_idx]), "or",
           list(sorted_idx))
 
-    pretty_features = [Definitions.pretty_label_dict.get(f, f) for f in features]
+    pretty_features = [definitions.pretty_label_dict.get(f, f) for f in features]
     title_suffix = ""
     num_features = len(features)
     if max_to_plot:
@@ -41,7 +41,7 @@ def plot_permutation_feature_importance(model, title, features, target, X_test, 
     fig = plt.figure(figsize=(4.1, 0.75 + num_features / 6))
     plt.boxplot(result.importances[sorted_idx].T, vert=False, labels=np.array(pretty_features)[sorted_idx])
     plt.title(
-        "Feature permutation importance" + title_suffix + "\ntarget: " + Definitions.pretty_label_dict.get(target,
+        "Feature permutation importance" + title_suffix + "\ntarget: " + definitions.pretty_label_dict.get(target,
                                                                                                target),
         fontsize=10)
     fig.tight_layout()
@@ -62,9 +62,9 @@ def plot_two_top_features(model, score, score_name, title, X, y, X_names, y_name
 
     x_min, x_max = 0.9 * X[:, 0].min() - 0.25, X[:, 0].max() + 0.2 * (X[:, 0].max() - X[:, 0].min())
     y_min, y_max = 0.9 * X[:, 1].min() - 0.25, X[:, 1].max() + 0.2 * (X[:, 1].max() - X[:, 1].min())
-    if Definitions.scale_dict.get(X_names[0], 'linear') not in ['log', 'symlog']:
+    if definitions.scale_dict.get(X_names[0], 'linear') not in ['log', 'symlog']:
         x_min, x_max = X[:, 0].min() - .02, X[:, 0].max() + .02
-    if Definitions.scale_dict.get(X_names[1], 'linear') not in ['log', 'symlog']:
+    if definitions.scale_dict.get(X_names[1], 'linear') not in ['log', 'symlog']:
         y_min, y_max = X[:, 1].min() - .02, X[:, 1].max() + .02
 
     # ____________________________________________________________
@@ -72,8 +72,8 @@ def plot_two_top_features(model, score, score_name, title, X, y, X_names, y_name
 
     ax = fig.add_subplot(spec[0])
 
-    ax.set_xscale(Definitions.scale_dict.get(X_names[0], 'linear'))
-    ax.set_yscale(Definitions.scale_dict.get(X_names[1], 'linear'))
+    ax.set_xscale(definitions.scale_dict.get(X_names[0], 'linear'))
+    ax.set_yscale(definitions.scale_dict.get(X_names[1], 'linear'))
 
     sc = ax.scatter(X[:, 0], X[:, 1], marker='.', s=2, c=y, cmap=colours)
 
@@ -81,8 +81,8 @@ def plot_two_top_features(model, score, score_name, title, X, y, X_names, y_name
     ax.set_xlim((x_min, x_max))
     ax.set_ylim((y_min, y_max))
 
-    ax.set_xlabel(Definitions.pretty_label_dict.get(X_names[0], X_names[0]))
-    ax.set_ylabel(Definitions.pretty_label_dict.get(X_names[1], X_names[1]))
+    ax.set_xlabel(definitions.pretty_label_dict.get(X_names[0], X_names[0]))
+    ax.set_ylabel(definitions.pretty_label_dict.get(X_names[1], X_names[1]))
 
     # ____________________________________________________________
     # The second figure: the statistical model trained on the data
@@ -93,8 +93,8 @@ def plot_two_top_features(model, score, score_name, title, X, y, X_names, y_name
         np.arange(x_min, x_max, (x_max - x_min) / 2500),
         np.arange(y_min, y_max, (y_max - y_min) / 2500))
 
-    ax.set_xscale(Definitions.scale_dict.get(X_names[0], 'linear'))
-    ax.set_yscale(Definitions.scale_dict.get(X_names[1], 'linear'))
+    ax.set_xscale(definitions.scale_dict.get(X_names[0], 'linear'))
+    ax.set_yscale(definitions.scale_dict.get(X_names[1], 'linear'))
 
     Z = model.predict(np.c_[xx.ravel(), yy.ravel()])
     Z = Z.reshape(xx.shape)
@@ -104,7 +104,7 @@ def plot_two_top_features(model, score, score_name, title, X, y, X_names, y_name
 
     ax.tick_params(which='minor', length=0)
 
-    ax.set_xlabel(Definitions.pretty_label_dict.get(X_names[0], X_names[0]))
+    ax.set_xlabel(definitions.pretty_label_dict.get(X_names[0], X_names[0]))
     # ax.set_ylabel(X_names[1])
     ax.axes.yaxis.set_ticklabels([])
     ax.axes.yaxis.set_tick_params(left=False)
@@ -188,8 +188,8 @@ def scatterplot_2D(X, y, X_names, y_name):
     ax.set_xticks([50, 100, 200, 500, 1000, 2000, 5000, 10000])
     ax.set_yticks([1, 10, 20, 50, 100, 250, 500, 750, 1000])
 
-    plt.xlabel(Definitions.pretty_label_dict.get(X_names[0], X_names[0]))
-    plt.ylabel(Definitions.pretty_label_dict.get(X_names[1], X_names[1]))
+    plt.xlabel(definitions.pretty_label_dict.get(X_names[0], X_names[0]))
+    plt.ylabel(definitions.pretty_label_dict.get(X_names[1], X_names[1]))
 
     plt.tight_layout(pad=0.5)
     plt.savefig(fig_path + r"annotated-scatterplot-" + ' '.join(X_names) + "-" + y_name + ".png", dpi=200,
@@ -381,7 +381,7 @@ if __name__ == '__main__':
 
     # _________________________________________________________________________________________________
     # Read data, form the target variable
-    features = [f for fs in which_features for f in Definitions.feature_sets[fs]]
+    features = [f for fs in which_features for f in definitions.feature_sets[fs]]
     # Xy = read_dataset(dataset_filename, ['url'] + features + target)  # Xy = pd.DataFrame with url as index
     Xy = pd.read_pickle(dataset_filename)  # Xy = pd.DataFrame with url as index
     # some rows are invalid. They have marked with False value in their 'isValid' attribute
@@ -408,11 +408,11 @@ if __name__ == '__main__':
     if 'v' in which_features:
         agglo = FeatureAgglomeration(affinity='cosine', linkage='complete',
                                      n_clusters=num_SV_clusters)  # n_clusters should be hypertuned
-        X_SV = agglo.fit_transform(X[Definitions.feature_sets['v']])  # X_SV = np.array
+        X_SV = agglo.fit_transform(X[definitions.feature_sets['v']])  # X_SV = np.array
         print("Features reduced to", X_SV.shape)
 
         # merge back into a pd.DataFrame X[without SV features] with the now reduced X_SV
-        X = X.drop(Definitions.feature_sets['v'], axis='columns')  # X = pd.DataFrame
+        X = X.drop(definitions.feature_sets['v'], axis='columns')  # X = pd.DataFrame
         new_columns = ["SVCluster" + str(i) for i in range(num_SV_clusters)]
         X_SV = pd.DataFrame(X_SV, index=X.index.values, columns=new_columns)
         X[new_columns] = X_SV[new_columns]
@@ -423,7 +423,7 @@ if __name__ == '__main__':
     # scatterplot_2D(X, y, ['textSize', 'numInternalOutLinks'], pretty_label_dict.get(new_target, new_target))
 
     if not 'v' in which_features:
-        corr_matrix(X, [Definitions.pretty_label_dict.get(f, f) for f in X.columns.values],
+        corr_matrix(X, [definitions.pretty_label_dict.get(f, f) for f in X.columns.values],
                 'spearman', "corrmatrix-target_" + new_target + "-model " + which_model + "-features " + "_".join(
             which_features) + ".png")
     # exit()  # remove this when needed
@@ -497,4 +497,4 @@ if __name__ == '__main__':
         print("\t", top_feature_indices, score_name + ':', score)
         plot_two_top_features(tuned_model, score, score_name,
                               title, X[:, top_feature_indices], y, top_feature_names,
-                              Definitions.pretty_label_dict.get(new_target, new_target))
+                              definitions.pretty_label_dict.get(new_target, new_target))

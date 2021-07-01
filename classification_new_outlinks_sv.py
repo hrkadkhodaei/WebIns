@@ -23,7 +23,7 @@ from lightgbm import LGBMClassifier
 
 # from data_exploration import read_dataset, plot_categorical_distribution, corr_matrix
 # from feature_selection import filter_RFECV
-import Definitions
+import definitions
 import os
 
 fig_path = 'figures-newOutlinks/'
@@ -76,8 +76,8 @@ def export_confusion_matrix(y, y_pred, filename):
     # plt.title(title)
     # plt.colorbar()
     tick_marks = list(range(size))
-    plt.xticks(tick_marks, [Definitions.pretty_class_names[c] for c in class_names])  # , rotation=70)
-    plt.yticks(tick_marks, [Definitions.pretty_class_names[c] for c in class_names])
+    plt.xticks(tick_marks, [definitions.pretty_class_names[c] for c in class_names])  # , rotation=70)
+    plt.yticks(tick_marks, [definitions.pretty_class_names[c] for c in class_names])
     plt.ylabel('True class')
     plt.xlabel('Predicted class')
     for i in range(len(class_names)):
@@ -174,7 +174,7 @@ def plot_permutation_feature_importance(model, title, features, target, X_test, 
     print("\nTop features in ascending order of importance:\n\t", list(np.array(features)[sorted_idx]), "or",
           list(sorted_idx))
 
-    pretty_features = [Definitions.pretty_label_dict.get(f, f) for f in features]
+    pretty_features = [definitions.pretty_label_dict.get(f, f) for f in features]
     title_suffix = ""
     num_features = len(features)
     if max_to_plot:
@@ -185,7 +185,7 @@ def plot_permutation_feature_importance(model, title, features, target, X_test, 
 
     fig = plt.figure(figsize=(4.1, 0.75 + num_features / 6))
     plt.boxplot(result.importances[sorted_idx].T, vert=False, labels=np.array(pretty_features)[sorted_idx])
-    plt.title("Feature permutation importance" + title_suffix + "\ntarget: " + Definitions.pretty_label_dict.get(target,
+    plt.title("Feature permutation importance" + title_suffix + "\ntarget: " + definitions.pretty_label_dict.get(target,
                                                                                                                  target),
               fontsize=10)
     fig.tight_layout()
@@ -205,9 +205,9 @@ def plot_two_top_features(model, score, score_name, title, X, y, X_names, y_name
 
     x_min, x_max = 0.9 * X[:, 0].min() - 0.25, X[:, 0].max() + 0.2 * (X[:, 0].max() - X[:, 0].min())
     y_min, y_max = 0.9 * X[:, 1].min() - 0.25, X[:, 1].max() + 0.2 * (X[:, 1].max() - X[:, 1].min())
-    if Definitions.scale_dict.get(X_names[0], 'linear') not in ['log', 'symlog']:
+    if definitions.scale_dict.get(X_names[0], 'linear') not in ['log', 'symlog']:
         x_min, x_max = X[:, 0].min() - .02, X[:, 0].max() + .02
-    if Definitions.scale_dict.get(X_names[1], 'linear') not in ['log', 'symlog']:
+    if definitions.scale_dict.get(X_names[1], 'linear') not in ['log', 'symlog']:
         y_min, y_max = X[:, 1].min() - .02, X[:, 1].max() + .02
 
     # ____________________________________________________________
@@ -215,8 +215,8 @@ def plot_two_top_features(model, score, score_name, title, X, y, X_names, y_name
 
     ax = fig.add_subplot(spec[0])
 
-    ax.set_xscale(Definitions.scale_dict.get(X_names[0], 'linear'))
-    ax.set_yscale(Definitions.scale_dict.get(X_names[1], 'linear'))
+    ax.set_xscale(definitions.scale_dict.get(X_names[0], 'linear'))
+    ax.set_yscale(definitions.scale_dict.get(X_names[1], 'linear'))
 
     sc = ax.scatter(X[:, 0], X[:, 1], marker='.', s=2, c=y, cmap=colours)
 
@@ -224,8 +224,8 @@ def plot_two_top_features(model, score, score_name, title, X, y, X_names, y_name
     ax.set_xlim((x_min, x_max))
     ax.set_ylim((y_min, y_max))
 
-    ax.set_xlabel(Definitions.pretty_label_dict.get(X_names[0], X_names[0]))
-    ax.set_ylabel(Definitions.pretty_label_dict.get(X_names[1], X_names[1]))
+    ax.set_xlabel(definitions.pretty_label_dict.get(X_names[0], X_names[0]))
+    ax.set_ylabel(definitions.pretty_label_dict.get(X_names[1], X_names[1]))
 
     # ____________________________________________________________
     # The second figure: the statistical model trained on the data
@@ -235,8 +235,8 @@ def plot_two_top_features(model, score, score_name, title, X, y, X_names, y_name
         np.arange(x_min, x_max, (x_max - x_min) / 2500),
         np.arange(y_min, y_max, (y_max - y_min) / 2500))
 
-    ax.set_xscale(Definitions.scale_dict.get(X_names[0], 'linear'))
-    ax.set_yscale(Definitions.scale_dict.get(X_names[1], 'linear'))
+    ax.set_xscale(definitions.scale_dict.get(X_names[0], 'linear'))
+    ax.set_yscale(definitions.scale_dict.get(X_names[1], 'linear'))
 
     if hasattr(model, "decision_function"):
         Z = model.decision_function(np.c_[xx.ravel(), yy.ravel()])
@@ -249,7 +249,7 @@ def plot_two_top_features(model, score, score_name, title, X, y, X_names, y_name
 
     ax.tick_params(which='minor', length=0)
 
-    ax.set_xlabel(Definitions.pretty_label_dict.get(X_names[0], X_names[0]))
+    ax.set_xlabel(definitions.pretty_label_dict.get(X_names[0], X_names[0]))
     # ax.set_ylabel(X_names[1])
     ax.axes.yaxis.set_ticklabels([])
     ax.axes.yaxis.set_tick_params(left=False)
@@ -285,7 +285,7 @@ if __name__ == '__main__':
     # for dur in [7]:
         which_features = ['SP', 'SN'] + ['DP' + str(dur + 1)] + ['DN' + str(dur + 1)] + ['DPRate']
         # which_features = ['SP', 'SN']
-        features = [f for fs in which_features for f in Definitions.feature_sets[fs]]
+        features = [f for fs in which_features for f in definitions.feature_sets[fs]]
 
         Xy = mainXy.filter(items=['url'] + features + target)
         Xy = Xy.set_index('url')
@@ -321,9 +321,9 @@ if __name__ == '__main__':
             if 'v' in which_features:
                 agglo = FeatureAgglomeration(affinity='cosine', linkage='complete',
                                              n_clusters=num_SV_clusters)  # n_clusters should be hypertuned
-                X_SV = agglo.fit_transform(X[Definitions.feature_sets['v']])  # X_SV = np.array
+                X_SV = agglo.fit_transform(X[definitions.feature_sets['v']])  # X_SV = np.array
                 print("Features reduced to", X_SV.shape)
-                X = X.drop(Definitions.feature_sets['v'], axis='columns')  # X = pd.DataFrame
+                X = X.drop(definitions.feature_sets['v'], axis='columns')  # X = pd.DataFrame
                 new_columns = ["SVCluster" + str(i) for i in range(num_SV_clusters)]
                 X_SV = pd.DataFrame(X_SV, index=X.index.values, columns=new_columns)
                 X[new_columns] = X_SV[new_columns]
@@ -377,4 +377,4 @@ if __name__ == '__main__':
                     print("\t", top_feature_indices, score_name + ':', score)
                     plot_two_top_features(tuned_model, score, score_name,
                                           title, X[:, top_feature_indices], y, top_feature_names,
-                                          Definitions.pretty_label_dict.get(new_target, new_target))
+                                          definitions.pretty_label_dict.get(new_target, new_target))
