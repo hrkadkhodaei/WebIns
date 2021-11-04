@@ -26,16 +26,16 @@ feature_label_dict = {
     'diffInternalOutLinks': '# new internal outlinks',
     'diffExternalOutLinks': '# new external outlinks',
 
-    'avg_contentLength': 'avg_page content size',
-    'avg_textSize': 'avg_page text size',
-    'avg_numInternalOutLinks': 'avg_# internal outlinks',
-    'avg_numExternalOutLinks': 'avg_# external outlinks',
-    'avg_numInternalInLinks': 'avg_# internal inlinks',
-    'avg_numExternalInLinks': 'avg_# external inlinks',
-    'avg_textQuality': 'avg_page text quality',
-    'avg_pathDepth': 'avg_URL path depth',
-    'avg_domainDepth': 'avg_URL domain depth',
-    'avg_trustRank': 'avg_TrustRank',
+    'avg_contentLength':       'related page content size',
+    'avg_textSize':            'related page text size',
+    'avg_numInternalOutLinks': '# related internal outlinks',
+    'avg_numExternalOutLinks': '# related external outlinks',
+    'avg_numInternalInLinks':  '# related internal inlinks',
+    'avg_numExternalInLinks':  '# related external inlinks',
+    'avg_textQuality':         'related page text quality',
+    'avg_pathDepth':           'related URL path depth',
+    'avg_domainDepth':         'related URL domain depth',
+    'avg_trustRank':           'related TrustRank',
 }
 
 target_label_dict = {
